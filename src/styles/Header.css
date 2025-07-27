@@ -223,8 +223,7 @@ button, input, optgroup, select, textarea {
 }
 
 .btn-search-header {
-    display: flex
-;
+    display: flex;
     align-items: center;
     gap: 6px;
     padding: 13px 26px;
@@ -234,6 +233,19 @@ button, input, optgroup, select, textarea {
     background-color: #027a36;
     border-radius: 30px;
     color: #ffff;
+}
+
+.btn-search-header-two {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 13px 26px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 700;
+    /* background-color: #027a36; */
+    border-radius: 30px;
+    color: #027a36;
 }
 
 .search-icon-text .icon-header {

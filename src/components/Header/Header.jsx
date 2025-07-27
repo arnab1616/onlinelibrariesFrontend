@@ -163,67 +163,27 @@ export default function Header() {
   );
   const searchDrawer = () => (
     <Box
-      sx={{ width: 250 }}
+      sx={{ width: 300 }}
       role="presentation"
-      onClick={toggleDrawer2(false)}
-      onKeyDown={toggleDrawer2(false)}
+      // onClick={toggleDrawer2(false)}
+      // onKeyDown={toggleDrawer2(false)}
     >
       <Box sx={{p:2, pb: 0}}>
         <Box sx={{display:'flex', alignItems:'center'}}>
-          <IconButton
-            size="large"
-            edge="start"
-            color="#027a36"
-            aria-label="open drawer"
-            // sx={{ mr: 2 }}
-          >
-            {/* <MenuIcon /> */}
-            <MenuBookRoundedIcon sx={{color:'#027a36'}} />
-          </IconButton>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ display: { xs: 'block', sm: 'block', color:'#027a36' } }}
-          >
-            StudyCraft
-          </Typography>
+          <Box>
+            <form class="predictive-search__form" action="/search" method="get" role="search">
+                <button class="btn-search-header-two">
+                    <div class="icon-header">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                          <path d="M21 21L15.0001 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
+                      </svg>
+                    </div>
+                </button>
+                <input class="predictive-search__input" is="ap-predictivesearchinput" type="text" name="q" autocomplete="off" autocorrect="off" ap-controlsaria="search-drawer" ap-expanded-aria="false" aria-label="Search" placeholder="Search our store..." style={{outline:0,}} />
+            </form>
+          </Box>
         </Box>
       </Box>
-      <List>
-        <ListItem disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              <HomeFilledIcon />
-            </ListItemIcon>
-            <ListItemText primary={'Home'} />
-          </ListItemButton>
-        </ListItem>
-        <ListItem disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              <ShoppingBagIcon />
-            </ListItemIcon>
-            <ListItemText primary={'Shop'} />
-          </ListItemButton>
-        </ListItem>
-        <ListItem disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              <PersonIcon />
-            </ListItemIcon>
-            <ListItemText primary={'About'} />
-          </ListItemButton>
-        </ListItem>
-        <ListItem disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              <CallIcon />
-            </ListItemIcon>
-            <ListItemText primary={'Contact us'} />
-          </ListItemButton>
-        </ListItem>
-      </List>
       <Divider />
       <Box sx={{p:3, mt: 2}}>
         <Typography sx={{fontSize:'14px'}}>Need help? Call Us: <b>+84 2500 888 33</b></Typography>
@@ -233,7 +193,7 @@ export default function Header() {
 
 
   return (
-    <Box sx={{ flexGrow: 1, position:'fixed', width:'100%' }}>
+    <Box sx={{ flexGrow: 1, position:'fixed', width:'100%', zIndex:'999' }}>
       <AppBar position="static" sx={{backgroundColor:'white', color:'#000000a3'}}>
         <Toolbar>
           <Box sx={{display:'flex', alignItems:'center'}}>
@@ -275,7 +235,7 @@ export default function Header() {
                     <button class="btn-search-header">
                         <div class="icon-header">
                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                              <path d="M21 21L15.0001 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                              <path d="M21 21L15.0001 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
                           </svg>
                         </div>
                         <span>Search</span>
