@@ -171,15 +171,15 @@ export default function Header() {
       <Box sx={{p:2, pb: 0}}>
         <Box sx={{display:'flex', alignItems:'center'}}>
           <Box>
-            <form class="predictive-search__form" action="/search" method="get" role="search">
-                <button class="btn-search-header-two">
-                    <div class="icon-header">
+            <form className="predictive-search__form" action="/search" method="get" role="search">
+                <button className="btn-search-header-two">
+                    <div className="icon-header">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                           <path d="M21 21L15.0001 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
                       </svg>
                     </div>
                 </button>
-                <input class="predictive-search__input" is="ap-predictivesearchinput" type="text" name="q" autocomplete="off" autocorrect="off" ap-controlsaria="search-drawer" ap-expanded-aria="false" aria-label="Search" placeholder="Search our store..." style={{outline:0,}} />
+                <input className="predictive-search__input" is="ap-predictivesearchinput" type="text" name="q" autocomplete="off" autocorrect="off" ap-controlsaria="search-drawer" ap-expanded-aria="false" aria-label="Search" placeholder="Search our store..." style={{outline:0,}} />
             </form>
           </Box>
         </Box>
@@ -225,15 +225,15 @@ export default function Header() {
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search> */}
-          <Box class="header-icon search-icon-text header-search">
-            <div class="header__search-bar predictive-search">
-                <form class="predictive-search__form" action="/search" method="get" role="search">
+          <Box className="header-icon search-icon-text header-search">
+            <div className="header__search-bar predictive-search">
+                <form className="predictive-search__form" action="/search" method="get" role="search">
                     {/* <input type="hidden" name="type" value="product">
                     <input type="hidden" name="options[prefix]" value="last">
                     <input type="hidden" name="options[unavailable_products]" value="last"> */}
-                    <input class="predictive-search__input" is="ap-predictivesearchinput" type="text" name="q" autocomplete="off" autocorrect="off" ap-controlsaria="search-drawer" ap-expanded-aria="false" aria-label="Search" placeholder="Search our store..." style={{outline:0,}} />
-                    <button class="btn-search-header">
-                        <div class="icon-header">
+                    <input className="predictive-search__input" is="ap-predictivesearchinput" type="text" name="q" autocomplete="off" autocorrect="off" ap-controlsaria="search-drawer" ap-expanded-aria="false" aria-label="Search" placeholder="Search our store..." style={{outline:0,}} />
+                    <button className="btn-search-header">
+                        <div className="icon-header">
                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                               <path d="M21 21L15.0001 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
                           </svg>
@@ -295,11 +295,11 @@ export default function Header() {
         <Divider />
         <Toolbar sx={{display:'flex', alignItems:'center', justifyContent:'space-between'}}>
           <Box sx={{display:'flex', alignItems:'center', width:{xs: '100%', md:'fit-content'}, justifyContent:{xs:'space-between', md:'normal'}}}>
-            <div class="menu-categories">
-              <button class="header__icon-wrapper tap-area" id="basic-button" aria-controls={open ? 'basic-menu' : undefined} aria-haspopup="true" aria-expanded={open ? 'true' : undefined} onClick={handleClick}>
-                <div class="categories-title">
-                  <p class="nav-categories-title">all category</p>
-                  <div class="icon-title_categories-left">
+            <div className="menu-categories">
+              <button className="header__icon-wrapper tap-area" id="basic-button" aria-controls={open ? 'basic-menu' : undefined} aria-haspopup="true" aria-expanded={open ? 'true' : undefined} onClick={handleClick}>
+                <div className="categories-title">
+                  <p className="nav-categories-title">all category</p>
+                  <div className="icon-title_categories-left">
                       <svg xmlns="http://www.w3.org/2000/svg" width="13" height="11" viewBox="0 0 13 11" fill="none">
                         <path d="M0.375 1.15625C0.411458 0.755208 0.630208 0.536458 1.03125 0.5H11.9688C12.3698 0.536458 12.5885 0.755208 12.625 1.15625C12.5885 1.55729 12.3698 1.77604 11.9688 1.8125H1.03125C0.630208 1.77604 0.411458 1.55729 0.375 1.15625ZM0.375 5.53125C0.411458 5.13021 0.630208 4.91146 1.03125 4.875H11.9688C12.3698 4.91146 12.5885 5.13021 12.625 5.53125C12.5885 5.93229 12.3698 6.15104 11.9688 6.1875H1.03125C0.630208 6.15104 0.411458 5.93229 0.375 5.53125ZM12.625 9.90625C12.5885 10.3073 12.3698 10.526 11.9688 10.5625H1.03125C0.630208 10.526 0.411458 10.3073 0.375 9.90625C0.411458 9.50521 0.630208 9.28646 1.03125 9.25H11.9688C12.3698 9.28646 12.5885 9.50521 12.625 9.90625Z" fill="currentColor"></path>
                       </svg>
