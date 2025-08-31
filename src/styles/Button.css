@@ -1,5 +1,5 @@
 .btn-theme-one {
-    color: green;
+    color: #027a36;
     padding: 1rem 1.2rem;
     border-radius: 50px;
     transition: all 0.35s ease-in-out;
@@ -15,6 +15,27 @@
 }
 
 .btn-theme-one:hover{
-    background: green;
+    background: #027a36;
+    color: white;
+}
+
+.btn-theme-two {
+    color: white;
+    padding: 0.8rem 1rem;
+    border-radius: 50px;
+    transition: all 0.35s ease-in-out;
+    background: #027a36;
+    font-size: 1rem;
+    font-style: unset;
+    text-transform: capitalize;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.btn-theme-two:hover{
+    background: #000000a9;
     color: white;
 }

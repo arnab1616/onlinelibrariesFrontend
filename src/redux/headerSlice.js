@@ -1,0 +1,30 @@
+import { createSlice, current } from "@reduxjs/toolkit";
+import { path } from "framer-motion/client";
+
+const initialState = {
+    pathNames: [
+        {id:1, pathName:"Home", path:'/', active:true},
+        {id:2, pathName:"About", path:'/shop', active:true},
+        {id:3, pathName:"About", path:'/about', active:false},
+        {id:4, pathName:"Contact", path:'/contact', active:false}
+
+    ],
+    currentPath: {id:1, pathName:"Home", path:'/', active:true},
+}
+
+const headerSlice = createSlice({
+  name: "header",
+  initialState: initialState,
+  reducers: {
+    activePath: (state, action) => {
+        state.currentPath = action.payload;
+    },
+    activePathReload: (state, action) => {
+        const current = state.pathNames.find((item) => item.path === action.payload.path)
+        state.currentPath = current;
+    },
+  },
+});
+
+export const { activePath, activePathReload } = headerSlice.actions;
+export default headerSlice.reducer;
