@@ -200,29 +200,30 @@
 }
 
 @media (max-width: 1200px) {
-    .sl-lable {
-      position: absolute;
-      top: 80%;
-      right: -11px;
-      transform: translate(-50%,-50%);
+    .hero1 .hero1-content-outer .sl-lable {
+        position: absolute;
+        top: 80%;
+        right: -11px;
+        transform: translate(-50%,-50%);
+        width: fit-content;
+        left: auto;
+    }
 
-    .inner-box {
+    .hero1 .hero1-content-outer .sl-lable .inner-box {
         .discount {
             position: absolute;
-                    left: 50%;
-                    transform: translate(-50%,-50%);top: 50%;
-                    font-size: 28px;
+            left: 50%;
+            transform: translate(-50%,-50%);top: 50%;
+            font-size: 25px;
             line-height: 27px;
-                    font-weight: 900;
-                    color: #fff;
-                    text-transform: uppercase;
-                    z-index: 1;
-            
+            font-weight: 900;
+            color: #fff;
+            text-transform: uppercase;
+            z-index: 1;
         } 
         .discount-img {
             width: 100px;
             height: 100px;
         }
-    }
     }
 }
