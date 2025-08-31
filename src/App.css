@@ -66,3 +66,107 @@
     padding-top: 7rem;
   }
 }
+
+.book-container-scroll {
+  overflow: auto;
+  padding-bottom: 1rem;
+  position: relative;
+}
+
+.book-container {
+  display: flex;
+  flex-wrap: nowrap;
+  /* justify-content: center; */
+  align-items: center;
+  gap: 20px;
+}
+
+.book-container .book-inner {
+  width: fit-content;
+  min-width: 250px;
+  border-radius: 8px;
+  border: 1px solid #80808052;
+  max-width: 250px;
+  /* padding: 8px; */
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  height: 520px;
+}
+
+.book-container .book-inner:hover {
+  border-color: #027a36;
+}
+
+.book-container .book-inner:hover .thumbnail img {
+  transform: scale(1.1);
+}
+
+.book-container .book-inner .thumbnail{
+  height: 300px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease-in-out;
+    object-fit: cover;
+  }
+  
+}
+
+.book-container .book-inner .book-inner-content{
+  padding: 1rem;
+
+  .title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .author {
+    text-align: center;
+    margin-top: 8px;
+    margin-bottom: 8px;
+
+    a {
+      color: gray;
+    }
+  }
+
+  .price {
+    font-size: 1.5rem;
+    display: flex;
+    font-weight: bold;
+    align-items: center;
+    color: #027a36;
+    justify-content: center;
+  }
+  .btn-container {
+    position: relative;
+    bottom: 0;
+    height: 100%;
+    margin-top: 1rem;
+    /* transition: all 0.3s ease-in-out; */
+
+    button {
+      width: 100%;
+      padding: 0.5rem 1rem;
+      position: absolute;
+      bottom: -112px;
+      transition: all 0.3s ease-in-out;
+      /* background-color: #027a36; */
+      opacity: 0;
+    }
+  }
+}
+
+.book-container .book-inner:hover .book-inner-content .btn-container button{
+  opacity: 1;
+  bottom: auto;
+}
+
+.book-container .book-inner:hover .book-inner-content .title {
+  color: #027a36;
+}

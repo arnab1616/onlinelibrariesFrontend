@@ -1,6 +1,6 @@
 
 import '../../styles/Header.css'
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -28,16 +28,37 @@ import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import CallIcon from '@mui/icons-material/Call';
 import PersonIcon from '@mui/icons-material/Person';
 import { Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Stack } from '@mui/material';
+import { useNavigate, useNavigation } from 'react-router-dom';
+import { useSelector, useDispatch } from "react-redux";
+import { activePath, activePathReload } from '../../redux/headerSlice';
 
 
 export default function Header() {
+  const {currentPath} = useSelector((state) => state.header);
   const [anchorEl, setAnchorEl] = useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
 
   const isMenuOpen = Boolean(anchorEl);
 
   const [anchorEl1, setAnchorEl1] = React.useState(null);
+  const navigation = useNavigate();
+  const dispatch = useDispatch();
+  const NavlinkActivation = (id, path) => {
+    const current = window.location.pathname;
+    navigation(path);
+    dispatch(activePath({id, path}));
+    if (current === path) {
+      dispatch(activePath({id, path}))
+      navigation(path);
+      return;
+    }
+  }
+  useEffect(() => {
+    const current = window.location.pathname;
+    dispatch(activePathReload({path: current}));
+  }, [])
   const open = Boolean(anchorEl1);
+  
   const handleClick = (event) => {
     setAnchorEl1(event.currentTarget);
   };
@@ -98,6 +119,7 @@ export default function Header() {
       role="presentation"
       onClick={toggleDrawer(false)}
       onKeyDown={toggleDrawer(false)}
+      className='mobile-nav'
     >
       <Box sx={{p:2, pb: 0}}>
         <Box sx={{display:'flex', alignItems:'center'}}>
@@ -122,7 +144,9 @@ export default function Header() {
         </Box>
       </Box>
       <List>
-        <ListItem disablePadding>
+        <ListItem disablePadding className={currentPath.id == 1?'current':''} onClick={() => {
+          NavlinkActivation(1,'/')
+        }}>
           <ListItemButton>
             <ListItemIcon>
               <HomeFilledIcon />
@@ -130,7 +154,9 @@ export default function Header() {
             <ListItemText primary={'Home'} />
           </ListItemButton>
         </ListItem>
-        <ListItem disablePadding>
+        <ListItem disablePadding className={currentPath.id == 2?'current':''} onClick={() => {
+          NavlinkActivation(2,'/shop')
+        }}>
           <ListItemButton>
             <ListItemIcon>
               <ShoppingBagIcon />
@@ -138,15 +164,19 @@ export default function Header() {
             <ListItemText primary={'Shop'} />
           </ListItemButton>
         </ListItem>
-        <ListItem disablePadding>
+        <ListItem disablePadding className={currentPath.id == 3?'current':''} onClick={() => {
+          NavlinkActivation(3,'/about')
+        }}>
           <ListItemButton>
             <ListItemIcon>
               <PersonIcon />
             </ListItemIcon>
-            <ListItemText primary={'About'} />
+            <ListItemText primary={'About'} path='/about' />
           </ListItemButton>
         </ListItem>
-        <ListItem disablePadding>
+        <ListItem disablePadding className={currentPath.id == 4?'current':''} onClick={() => {
+          NavlinkActivation(4,'/contact')
+        }}>
           <ListItemButton>
             <ListItemIcon>
               <CallIcon />
@@ -308,11 +338,19 @@ export default function Header() {
               </button>
             </div>
             <Box className='lower-nav' sx={{display: {xs: 'none', md:'flex'}}}>
-              <List sx={{display:'flex', alignItems:'center'}}>
-                  <ListItem className='current'>Home</ListItem>
-                  <ListItem>Shop</ListItem>
-                  <ListItem>About</ListItem>
-                  <ListItem>Contact</ListItem>
+              <List sx={{display:'flex', alignItems:'center', gap:'5px'}}>
+                  <ListItem className={currentPath.id == 1?'current':''} onClick={() => {
+                    NavlinkActivation(1,'/')
+                  }}>Home</ListItem>
+                  <ListItem className={currentPath.id == 2?'current':''} onClick={() => {
+                    NavlinkActivation(2,'/shop')
+                  }}>Shop</ListItem>
+                  <ListItem className={currentPath.id == 3?'current':''} onClick={() => {
+                    NavlinkActivation(3,'/about')
+                  }}>About</ListItem>
+                  <ListItem className={currentPath.id == 4?'current':''} onClick={() => {
+                    NavlinkActivation(4,'/contact')
+                  }}>Contact</ListItem>
               </List>
             </Box>
             <Box sx={{ display: { xs: 'flex', md: 'none' } }}>

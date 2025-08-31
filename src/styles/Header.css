@@ -299,3 +299,13 @@ button, input, optgroup, select, textarea {
     border-radius: 50px;
 }
 
+.mobile-nav ul li.current {
+    color: #027a36;
+    background-color: #027a3633;
+    cursor: pointer;
+}
+
+.mobile-nav ul li.current svg{
+    color: #027a36;
+}
+
