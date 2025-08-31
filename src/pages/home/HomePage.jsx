@@ -6,7 +6,7 @@ const HomePage = () => {
   return (
     <>
       <Header />
-      <main style={{position:'absolute', width: '100%', height:'100%', top:0, left:0}}>
+      <main className='main-container'>
         <Hero1 />
       </main>
     </>
