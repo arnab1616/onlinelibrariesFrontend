@@ -7,6 +7,7 @@ import { Box, IconButton } from '@mui/material'
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 import AddIcon from '@mui/icons-material/Add';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
 
 const HomePage = () => {
   return (
@@ -19,6 +20,23 @@ const HomePage = () => {
           <Box className="book-container">
             {books?.map((book, i) => (
               <div className='book-inner'>
+                <div style={{position:'relative'}}>
+                  <div style={{position:'absolute', top:'0', left:'0', zIndex:'1', display:'flex', justifyContent:'space-between', width:'100%',}}>
+                    <div style={{width:'fit-content', height:'fit-content', padding:'8px'}}>
+                      <div style={{background:'red', color:'white', width:'40px', height:'40px', display:'flex', justifyContent:'center', alignItems:'center', padding:'8px', borderRadius:'50%'}}>
+                        <div style={{fontSize:'13px'}}>-15%</div>
+                      </div>
+                    </div>
+                    <div style={{display:'flex', justifyContent:'space-between', alignItems:'center', flexDirection:'column', gap:'8px', color:'white', marginTop:'8px', marginRight:'8px'}}>
+                      <IconButton sx={{color:'white', background: "#bebebe36"}}>
+                        <FavoriteBorderIcon />
+                      </IconButton>
+                      <IconButton sx={{color:'white', background: "#bebebe36"}}>
+                        <VisibilityOutlinedIcon />
+                      </IconButton>
+                    </div>
+                  </div>
+                </div>
                 <div className='thumbnail'>
                   <img src={book.thumbnail} alt="" />
                 </div>

@@ -41,6 +41,7 @@
   color: #888;
 } */
 
+
 @media (max-width: 900px){
   .header-search{
     display: none;
@@ -96,6 +97,7 @@
 
 .book-container .book-inner:hover {
   border-color: #027a36;
+  box-shadow: 1px 1px 8px 1px #808080a1;
 }
 
 .book-container .book-inner:hover .thumbnail img {
@@ -148,7 +150,7 @@
     bottom: 0;
     height: 100%;
     margin-top: 1rem;
-    /* transition: all 0.3s ease-in-out; */
+    transition: all 0.3s ease-in-out;
 
     button {
       width: 100%;
@@ -169,4 +171,24 @@
 
 .book-container .book-inner:hover .book-inner-content .title {
   color: #027a36;
+}
+
+@media (max-width: 700px) {
+  .book-container .book-inner .book-inner-content .btn-container {
+    position: relative;
+    bottom: 0;
+    height: 100%;
+    margin-top: 1rem;
+    /* transition: all 0.3s ease-in-out; */
+
+    button {
+      width: 100%;
+      padding: 0.5rem 1rem;
+      position: relative;
+      bottom: 0;
+      transition: all 0.3s ease-in-out;
+      /* background-color: #027a36; */
+      opacity: 1;
+    }
+  }
 }
