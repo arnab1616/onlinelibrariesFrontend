@@ -123,14 +123,12 @@ export default function Header() {
     >
       <Box sx={{p:2, pb: 0}}>
         <Box sx={{display:'flex', alignItems:'center'}}>
-          <IconButton
+          {/* <IconButton
             size="large"
             edge="start"
             color="#027a36"
             aria-label="open drawer"
-            // sx={{ mr: 2 }}
           >
-            {/* <MenuIcon /> */}
             <MenuBookRoundedIcon sx={{color:'#027a36'}} />
           </IconButton>
           <Typography
@@ -140,7 +138,10 @@ export default function Header() {
             sx={{ display: { xs: 'block', sm: 'block', color:'#027a36' } }}
           >
             StudyCraft
-          </Typography>
+          </Typography> */}
+          <div className='logo-header'>
+              <img src="/images/logo-2.png" alt="logo" width="100%" />
+          </div>
         </Box>
       </Box>
       <List>
@@ -227,14 +228,12 @@ export default function Header() {
       <AppBar position="static" sx={{backgroundColor:'white', color:'#000000a3'}}>
         <Toolbar>
           <Box sx={{display:'flex', alignItems:'center'}}>
-            <IconButton
+            {/* <IconButton
               size="large"
               edge="start"
               color="#027a36"
               aria-label="open drawer"
-              // sx={{ mr: 2 }}
             >
-              {/* <MenuIcon /> */}
               <MenuBookRoundedIcon sx={{color:'#027a36'}} />
             </IconButton>
             <Typography
@@ -244,7 +243,10 @@ export default function Header() {
               sx={{ display: { xs: 'block', sm: 'block', color:'#027a36' } }}
             >
               StudyCraft
-            </Typography>
+            </Typography> */}
+            <div className='logo-header'>
+              <img src="/images/logo-2.png" alt="logo" width="100%" />
+            </div>
           </Box>
           {/* <Search>
             <SearchIconWrapper>

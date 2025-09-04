@@ -21,7 +21,9 @@ function Hero1() {
                 <div className='first-content'><span>A brand new</span></div>
                 <div className='scnd-content'>
                   <span className="word-animation">
-                    <span>the</span> <span>world</span> <span>of</span> <br />  <span>young</span> <span>adult</span> <br /> <span>books</span>
+                    {/* <span>the</span> <span>world</span> <span>of</span> <br />  <span>young</span> <span>adult</span> <br /> <span>books</span> */}
+                    {/* <span>Text</span> <span>to</span> <span>Notes</span> <br /> <span>everything</span> <span>you</span> <br /> <span>need</span> <span>to</span> <span>successed</span> */}
+                    <span>Text</span> <span>to</span> <span>Notes</span> <br /> <span>everything</span> <span>you</span> <br /> <span>need</span>
                   </span>
                 </div>
                 <div className='trd-content'>

@@ -1,3 +1,13 @@
+.logo-header {
+    width: 200px;
+}
+
+@media (max-width: 576px) {
+    .logo-header {
+        width: 180px;
+    }
+}
+
 #shopify-section-header-3 .header {
     background-image: url();
     background-size: contain;
