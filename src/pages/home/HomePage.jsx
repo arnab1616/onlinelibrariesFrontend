@@ -15,7 +15,7 @@ const HomePage = () => {
     <>
       <Hero1 />
       <div style={{padding:'1rem'}}>
-        <h1 style={{fontWeight:'normal', marginBottom:"1rem", marginTop:'1rem'}}>This week's highlights </h1>
+        <h1 className='hd-c' style={{fontWeight:'normal', marginBottom:"1rem", marginTop:'1rem'}}>This week's highlights </h1>
 
         <div className="book-container-scroll" style={{marginBottom:'1rem', marginTop:'2rem'}}>
           <Box className="book-container">
@@ -64,7 +64,7 @@ const HomePage = () => {
       <Categories />
 
       <div style={{padding:'1rem', marginTop:'1rem'}}>
-        <h1 style={{fontWeight:'normal', marginBottom:"1rem", marginTop:'2rem'}}>Current bestselling books  </h1>
+        <h1 className='hd-c' style={{fontWeight:'normal', marginBottom:"1rem", marginTop:'2rem'}}>Current bestselling books  </h1>
         <div className="book-container-scroll" style={{marginBottom:'1rem', marginTop:'2rem'}}>
           <Box className="book-container">
             {books?.map((book, i) => (

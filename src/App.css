@@ -41,6 +41,10 @@
   color: #888;
 } */
 
+.hd-c {
+  color: #000000b8;
+}
+
 
 @media (max-width: 900px){
   .header-search{

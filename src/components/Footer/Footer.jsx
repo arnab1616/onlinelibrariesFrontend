@@ -14,14 +14,12 @@ export const Footer = () => {
                 <div className="footer__item text-left footer-item__1 is-first">
                   <div className="logo-footer footer__item-title">
                     <Box sx={{display:'flex', alignItems:'center'}}>
-                      <IconButton
+                      {/* <IconButton
                         size="large"
                         edge="start"
                         color="#027a36"
                         aria-label="open drawer"
-                        // sx={{ mr: 2 }}
                       >
-                        {/* <MenuIcon /> */}
                         <MenuBookRoundedIcon sx={{color:'#027a36', fontSize:'2rem'}} />
                       </IconButton>
                       <Typography
@@ -31,7 +29,10 @@ export const Footer = () => {
                         sx={{ display: { xs: 'block', sm: 'block', color:'#027a36' } }}
                       >
                         StudyCraft
-                      </Typography>
+                      </Typography> */}
+                      <div className='logo-header'>
+                        <img src="/images/logo-2.png" alt="logo" width="100%" />
+                      </div>
                     </Box>
                     {/* <img style={{width: '145px'}} loading="lazy" sizes="145px" className="footer__image" alt="" src="//ap-bokifa.myshopify.com/cdn/shop/files/logo_1.png?v=1729758360&amp;width=144" data-srcset="//ap-bokifa.myshopify.com/cdn/shop/files/logo_1.png?v=1729758360&amp;width=100 100w, //ap-bokifa.myshopify.com/cdn/shop/files/logo_1.png?v=1729758360&amp;width=200 200w, //ap-bokifa.myshopify.com/cdn/shop/files/logo_1.png?v=1729758360&amp;width=300 300w, //ap-bokifa.myshopify.com/cdn/shop/files/logo_1.png?v=1729758360&amp;width=400 400w, //ap-bokifa.myshopify.com/cdn/shop/files/logo_1.png?v=1729758360&amp;width=500 500w" width="144" height="36" /> */}
                   </div>   
