@@ -1,0 +1,290 @@
+.section-template--23597515800859__main-padding .breadcrumb-wp {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background-image: url(//ap-bokifa.myshopify.com/cdn/shop/files/Mask_group_12_1.jpg?v=1729849355&width=2000);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 450px;
+  border-radius: 0;
+  text-align: center;
+  background-color: #000000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.header-container {
+    margin-bottom: 1rem;
+    padding-top: 3rem;
+    text-align: center;
+
+    .heading {
+        /* font-size: 2.5rem; */
+        font-weight: 600;
+    }
+}
+
+.main-page-title {
+  font-size: 54px;
+  text-transform: capitalize;
+  position: relative;
+  line-height: 1;
+  font-family: var(--hd-font-family);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+#shopify-section-template--23597515800859__rich_text_xA4MWa {
+  background-image: url(//ap-bokifa.myshopify.com/cdn/shop/files/About_1.png?v=1729850181&width=2000);
+  background-size: cover;
+  background-position: center;
+  padding: 153px 0 575px;
+  border-width: 0px 0px 0px;
+  border-style: solid;
+  border-color: var(--border-color);
+}
+
+.container, .shopify-policy__container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-distance);
+  padding-right: var(--container-distance);
+  --container-outer-margin: 0px;
+}
+
+.content-box {
+  background-color: rgba(0,0,0,0);
+  border-radius: 8px;
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+
+
+.rich-text-list {
+  max-width: 1070px;
+  margin: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.sub-heading {
+  font-size: 18px;
+  line-height: 28px;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 600;
+  color: var(--sub-heading-color);
+  font-family: var(--body-font-family);
+}
+
+.heading {
+  display: block;
+  font-family: var(--hd-font-family);
+  font-size: 2rem;
+  font-weight: 500;
+  color: rgb(57, 57, 57);
+  text-transform: var(--heading-text-transform);
+  margin-top: 38px !important;
+}
+
+#shopify-section-template--23597515800859__advanced_content_2_bkx8qQ {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  --heading-color: 0, 0, 0;
+  --color-body: 105, 107, 133;
+  --background-color-content: #ffffff;
+}
+
+#shopify-section-template--23597515800859__advanced_content_2_bkx8qQ {
+  background-color: rgba(0,0,0,0);
+  margin: -575px 0 80px;
+  padding: 98px 0 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.shopify-section {
+  color: rgb(var(--color-body));
+  scroll-margin-top: calc(0px * var(--enable-sticky-header) + 0px * var(--enable-sticky-ap-announcementbar));
+  scroll-margin-top: calc(var(--header-height, 0px) * var(--enable-sticky-header) + var(--ap-announcementbar-height, 0px) * var(--enable-sticky-ap-announcementbar));
+}
+
+.advanced-content {
+  position: relative;
+}
+
+#shopify-section-template--23597515800859__advanced_content_2_bkx8qQ .row {
+    flex-wrap: nowrap;
+    /* gap: 2rem; */
+}
+
+.our-mission {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 490px;
+    padding: 40px 40px 0px 60px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px 0px 0px;
+    text-align: left;
+}
+
+.adv-list-image {
+    opacity: 1;
+    width:auto;
+    height: 850px;
+}
+
+@media (max-width: 986px) {
+    #shopify-section-template--23597515800859__advanced_content_2_bkx8qQ .row {
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+
+    .adv-list-image {
+        width: 100%;
+        height: 100%;
+    }
+
+    .our-mission {
+        display: none;
+    }
+}
+
+.position-relative {
+  position: relative !important;
+  display: block;
+}
+
+.text-list_description_2 .heading {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+#shopify-section-template--23597515800859__testimonial_carousel_cn4DUw {
+  --heading-color: 40, 40, 40;
+}
+#shopify-section-template--23597515800859__testimonial_carousel_cn4DUw {
+  background-color: #f9f5f0;
+  margin: 0px 0px 0px 0px;
+  padding: 80px 1rem 80px 1rem;
+  margin-bottom: 4rem;
+}
+
+header.mb-50 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.swiper-container {
+  position: relative;
+  padding: 0;
+  z-index: 1;
+  overflow: visible;
+  clip-path: inset(-20px -20px -200px -20px);
+  height: auto;
+  margin-right: auto;
+  margin-left: auto;
+  transition: .4s;
+}
+
+.swiper-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  transition-property: transform;
+  transition-timing-function: var(--swiper-wrapper-transition-timing-function,initial);
+  box-sizing: content-box;
+  transform: translate3d(0px,0,0);
+  gap: 2rem;
+}
+
+
+.testimonial-carousel-item {
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    /* width: 482px; */
+    width: 100%;
+    /* margin-right: 30px; */
+}
+
+.testimonial-carousel-infor {
+  position: relative;
+  flex: 1 1 110px;
+  padding: 20px;
+  text-align: center;
+}
+
+.testimonial__author {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.testimonial__content {
+  color: var(--color-des);
+  line-height: 26px;
+  font-size: var(--base-font-size);
+  margin-bottom: 56px;
+}
+
+.service {
+    padding: 0 1rem;
+}
+
+.service .row {
+    justify-content: space-around;
+    flex-wrap: nowrap;
+}
+
+.service-inner-box {
+    width: 25%;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem !important;
+  text-align: center;
+}
+
+.service-list-content {
+    text-align: center;
+}
+
+.service-list-content h5{
+    /* margin-bottom: 1rem; */
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  .service-template--23597515800859__service_JF6MCc .service-item {
+    padding: 40px;
+  }
+}
+.service-template--23597515800859__service_JF6MCc .service-item {
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .swiper-wrapper {
+        flex-wrap: wrap;
+    }
+
+    .service .row {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .service-inner-box {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+}
