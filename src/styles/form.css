@@ -1,0 +1,48 @@
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    color: rgba(0, 0, 0, 0.814);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group input[type="number"],
+.form-group input[type="email"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    border: 1px solid #8080808f;
+    color: #1f1f1f;
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: white;
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.form-check label {
+    color: rgba(0, 0, 0, 0.814);
+    font-size: 1rem;
+    font-weight: normal;
+    margin-bottom: 0;
+    display: block;
+}
+
+.form-check input[type="checkbox"] {
+    height: fit-content;
+    padding: 2px;
+    accent-color: #027a36;
+    cursor: pointer;
+}

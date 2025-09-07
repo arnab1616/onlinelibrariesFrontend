@@ -2,6 +2,12 @@
     padding: 1rem;
     background-color: rgb(249, 245, 240);
 
+    .swiper-wrapper-container {
+        margin-bottom: 1rem;
+        /* overflow: hidden; */
+        overflow: auto;
+    }
+
     .swiper-wrapper {
         position: relative;
         width: 100%;
@@ -10,6 +16,8 @@
         display: flex;
         transition-property: transform;
         box-sizing: content-box;
+        flex-wrap: nowrap;
+        /* animation: slide 35s linear infinite; */
 
         .swiper-slide {
             background-color: rgba(0, 0, 0, 0);
@@ -60,3 +68,8 @@
         }
     }
 }
+
+/* @keyframes slide {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-20%); }
+} */
