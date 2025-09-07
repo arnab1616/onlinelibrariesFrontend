@@ -1,0 +1,33 @@
+.product-section {
+    display: flex;
+    flex-direction: row;
+}
+
+.filter-section {
+    padding: 1rem;
+    width: 25%;
+    background-color: white;
+}
+
+.filter-section-box {
+  height: 100%;           /* let it stretch */
+}
+
+.default-form-group {
+  height: 100%;
+}
+
+.filter-section-inner {
+    background-color: rgb(249, 245, 240);
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+    position: sticky;
+    top: 20%;   /* distance from the top when it sticks */
+    z-index: 100;
+    align-self: flex-start; 
+}
+
+.product-container {
+    width: 75%;
+}

@@ -12,7 +12,7 @@ export const Categories = () => {
                     <button className='btn-theme-one'><p>browse all</p> <KeyboardDoubleArrowRightIcon sx={{ml:1}} /> </button>
                 </div>
             </div>
-            <div style={{marginBottom:'1rem', overflow:'hidden'}}>
+            <div className='swiper-wrapper-container'>
                 <div className='swiper-wrapper'>
                     <div id="block-collection_QqKMqf" className="swiper-slide" role="group" aria-label="1 / 8" data-swiper-slide-index="0">
                         <a href="/collections/fantasy" className="ap-multicolumn__image-wrapper">
