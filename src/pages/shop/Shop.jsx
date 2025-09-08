@@ -8,8 +8,17 @@ import AddIcon from '@mui/icons-material/Add';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
 import { FilterSidebar } from './components/FilterSidebar';
+import { FilterModal } from './components/FilterModal';
+import FilterListAltIcon from '@mui/icons-material/FilterListAlt';
+import { useState } from 'react';
 
 export const Shop = () => {
+  const [modal, setModal] = useState(false);
+
+  const toggleModal = () => {
+    setModal(!modal);
+  }
+
   return (
     <section className='about-us-section'>
       <div className="page-width page-width--narrow section-template--23597515800859__main-padding">
@@ -32,6 +41,9 @@ export const Shop = () => {
         <div className='product-container'>
           <div>
             <div style={{padding:'1rem', marginTop:'1rem'}}>
+              <Box className='filter-btn-box'>
+                <button type='button' className='btn-theme-two' style={{alignItems:'center', gap:'5px'}} onClick={toggleModal}><p>Filters</p> <FilterListAltIcon color='inherit' fontSize='inherit' /></button>
+              </Box>
               <h1 className='hd-c' style={{fontWeight:'normal', marginBottom:"1rem", marginTop:'2rem'}}>Current bestselling books  </h1>
               <div className="book-container-scroll" style={{marginBottom:'1rem', marginTop:'2rem'}}>
                 <Box className="book-container" style={{flexWrap:'wrap'}}>
@@ -80,6 +92,8 @@ export const Shop = () => {
         </div>
 
       </section>
+
+      <FilterModal toggleModal={toggleModal} modal={modal} />
     </section>
   )
 }

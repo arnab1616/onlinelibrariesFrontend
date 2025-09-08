@@ -31,3 +31,38 @@
 .product-container {
     width: 75%;
 }
+
+.filter-modal .filter-modal-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  align-items: center;
+  width: 100%;
+}
+
+.filter-btn-box {
+  display: none;
+}
+
+@media (max-width: 967px) {
+  .filter-btn-box {
+      display: block;
+  }
+  .product-section .filter-section {
+    display: none;
+  }
+  .product-section .product-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .book-container .book-inner {
+    max-width: 100%;
+    height: fit-content;
+  }
+}

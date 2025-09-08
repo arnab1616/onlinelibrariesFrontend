@@ -56,7 +56,7 @@ export default function Header() {
   useEffect(() => {
     const current = window.location.pathname;
     dispatch(activePathReload({path: current}));
-  }, [])
+  }, [window.location.pathname])
   const open = Boolean(anchorEl1);
   
   const handleClick = (event) => {
@@ -110,6 +110,7 @@ export default function Header() {
     >
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem onClick={() => navigation('/login')}>Login</MenuItem>
     </Menu>
   );
 
@@ -145,7 +146,7 @@ export default function Header() {
         </Box>
       </Box>
       <List>
-        <ListItem disablePadding className={currentPath.id == 1?'current':''} onClick={() => {
+        <ListItem disablePadding className={currentPath?.id == 1?'current':''} onClick={() => {
           NavlinkActivation(1,'/')
         }}>
           <ListItemButton>
@@ -155,7 +156,7 @@ export default function Header() {
             <ListItemText primary={'Home'} />
           </ListItemButton>
         </ListItem>
-        <ListItem disablePadding className={currentPath.id == 2?'current':''} onClick={() => {
+        <ListItem disablePadding className={currentPath?.id == 2?'current':''} onClick={() => {
           NavlinkActivation(2,'/shop')
         }}>
           <ListItemButton>
@@ -165,7 +166,7 @@ export default function Header() {
             <ListItemText primary={'Shop'} />
           </ListItemButton>
         </ListItem>
-        <ListItem disablePadding className={currentPath.id == 3?'current':''} onClick={() => {
+        <ListItem disablePadding className={currentPath?.id == 3?'current':''} onClick={() => {
           NavlinkActivation(3,'/about')
         }}>
           <ListItemButton>
@@ -175,7 +176,7 @@ export default function Header() {
             <ListItemText primary={'About'} path='/about' />
           </ListItemButton>
         </ListItem>
-        <ListItem disablePadding className={currentPath.id == 4?'current':''} onClick={() => {
+        <ListItem disablePadding className={currentPath?.id == 4?'current':''} onClick={() => {
           NavlinkActivation(4,'/contact')
         }}>
           <ListItemButton>
@@ -276,16 +277,18 @@ export default function Header() {
             </div>
           </Box>
           <Box sx={{ flexGrow: 1 }} />
-          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+          <Box className='header-icon-box' sx={{ display: { xs: 'none', md: 'flex' } }}>
+            <IconButton className={currentPath?.id == 5 ? 'current':''} size="large" aria-label="show 4 new mails" color="inherit" onClick={() => navigation('/favorites')}>
               <Badge badgeContent={1} color="error">
                 <FavoriteBorderRoundedIcon />
               </Badge>
             </IconButton>
             <IconButton
+              className={currentPath?.id == 6 ? 'current':''}
               size="large"
               aria-label="show 17 new notifications"
               color="inherit"
+              onClick={() => navigation('/cart')}
             >
               <Badge badgeContent={1} color="error">
                 <AddShoppingCartRoundedIcon />
@@ -341,30 +344,32 @@ export default function Header() {
             </div>
             <Box className='lower-nav' sx={{display: {xs: 'none', md:'flex'}}}>
               <List sx={{display:'flex', alignItems:'center', gap:'5px'}}>
-                  <ListItem className={currentPath.id == 1?'current':''} onClick={() => {
+                  <ListItem className={currentPath?.id == 1?'current':''} onClick={() => {
                     NavlinkActivation(1,'/')
                   }}>Home</ListItem>
-                  <ListItem className={currentPath.id == 2?'current':''} onClick={() => {
+                  <ListItem className={currentPath?.id == 2 ? 'current':''} onClick={() => {
                     NavlinkActivation(2,'/shop')
                   }}>Shop</ListItem>
-                  <ListItem className={currentPath.id == 3?'current':''} onClick={() => {
+                  <ListItem className={currentPath?.id == 3 ? 'current':''} onClick={() => {
                     NavlinkActivation(3,'/about')
                   }}>About</ListItem>
-                  <ListItem className={currentPath.id == 4?'current':''} onClick={() => {
+                  <ListItem className={currentPath?.id == 4 ? 'current':''} onClick={() => {
                     NavlinkActivation(4,'/contact')
                   }}>Contact</ListItem>
               </List>
             </Box>
-            <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
-              <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+            <Box className='header-icon-box' sx={{ display: { xs: 'flex', md: 'none' } }}>
+              <IconButton className={currentPath?.id == 5 ? 'current':''} size="large" aria-label="show 4 new mails" color="inherit" onClick={() => navigation('/favorites')}>
                 <Badge badgeContent={1} color="error">
                   <FavoriteBorderRoundedIcon />
                 </Badge>
               </IconButton>
               <IconButton
+                className={currentPath?.id == 6 ? 'current':''}
                 size="large"
                 aria-label="show 17 new notifications"
                 color="inherit"
+                onClick={() => navigation('/cart')}
               >
                 <Badge badgeContent={1} color="error">
                   <AddShoppingCartRoundedIcon />

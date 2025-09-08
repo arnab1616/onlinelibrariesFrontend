@@ -319,3 +319,11 @@ button, input, optgroup, select, textarea {
     color: #027a36;
 }
 
+.header-icon-box button {
+    transition:all ease-in-out 0.3s;
+}
+
+.header-icon-box button.current {
+    color: #027a36;
+    background-color: #027a3633;
+}

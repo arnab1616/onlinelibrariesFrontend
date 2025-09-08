@@ -18,7 +18,7 @@ export const FilterSidebar = () => {
                     <div className='form-group'>
                         <label htmlFor="">Product category</label>
                         <List name="productCategory" id="">
-                            <ListItemButton onClick={() => setOpen(!open)}>
+                            <ListItemButton onClick={() => setOpen(!open)} sx={{p: '0 0.3rem'}}>
                                 <ListItemText primary="Book" />
                                 {open ? <ExpandLess /> : <ExpandMore />}
                             </ListItemButton>
@@ -44,7 +44,7 @@ export const FilterSidebar = () => {
                                     </div>
                                 </List>
                             </Collapse>
-                            <ListItemButton onClick={() => setOpen2(!open2)}>
+                            <ListItemButton onClick={() => setOpen2(!open2)} sx={{p: '0 0.3rem'}}>
                                 <ListItemText primary="Stationary" />
                                 {open2 ? <ExpandLess /> : <ExpandMore />}
                             </ListItemButton>                            

@@ -17,7 +17,7 @@ export default function PriceRange() {
 
   return (
     <Box>
-        <Box sx={{ width: 300 }}>
+        <Box sx={{ maxWidth: 300, width: '100%' }}>
             <Slider
                 min={0}
                 max={599}
