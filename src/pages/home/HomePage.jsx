@@ -9,8 +9,10 @@ import AddIcon from '@mui/icons-material/Add';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
 import { Hero2 } from '../../components/Hero/Hero2'
+import { useNavigate } from 'react-router-dom'
 
 const HomePage = () => {
+  const navigate = useNavigate();
   return (
     <>
       <Hero1 />
@@ -38,7 +40,7 @@ const HomePage = () => {
                     </div>
                   </div>
                 </div>
-                <div className='thumbnail'>
+                <div className='thumbnail' onClick={() => navigate(`/shop/${book.title.replace(/\s+/g, "-").toLowerCase()}/${book?.id}`)}>
                   <img src={book.thumbnail} alt="" />
                 </div>
                 <div className='book-inner-content'>
@@ -48,7 +50,7 @@ const HomePage = () => {
                         <span style={{color: '#474747'}}>({book.rating})</span>
                     </div>
                   </div>
-                  <p className='title'>{book.title.length <= 40? book.title : book.title.slice(0,40) + '...'}</p>
+                  <p className='title' onClick={() => navigate(`/shop/${book.title.replace(/\s+/g, "-").toLowerCase()}/${book?.id}`)}>{book.title.length <= 40? book.title : book.title.slice(0,40) + '...'}</p>
                   <div className='author'><a href='#'>{book.author}</a></div>
                   <p className='price'><CurrencyRupeeIcon fontSize='inherit' sx={{mt:"4px"}} /> {book.price}  </p>
                   <div className='btn-container'>
@@ -86,7 +88,7 @@ const HomePage = () => {
                     </div>
                   </div>
                 </div>
-                <div className='thumbnail'>
+                <div className='thumbnail' onClick={() => navigate(`/shop/${book.title.replace(/\s+/g, "-").toLowerCase()}/${book?.id}`)}>
                   <img src={book.thumbnail} alt="" />
                 </div>
                 <div className='book-inner-content'>
@@ -96,7 +98,7 @@ const HomePage = () => {
                         <span style={{color: '#474747'}}>({book.rating})</span>
                     </div>
                   </div>
-                  <p className='title'>{book.title.length <= 40? book.title : book.title.slice(0,40) + '...'}</p>
+                  <p className='title' onClick={() => navigate(`/shop/${book.title.replace(/\s+/g, "-").toLowerCase()}/${book?.id}`)}>{book.title.length <= 40? book.title : book.title.slice(0,40) + '...'}</p>
                   <div className='author'><a href='#'>{book.author}</a></div>
                   <p className='price'><CurrencyRupeeIcon fontSize='inherit' sx={{mt:"4px"}} /> {book.price}  </p>
                   <div className='btn-container'>
