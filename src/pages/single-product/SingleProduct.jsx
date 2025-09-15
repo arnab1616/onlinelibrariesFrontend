@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useParams } from 'react-router-dom';
 import '..//../styles/Product.css'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import { Divider, IconButton, Rating } from '@mui/material';
+import { Divider, IconButton, Rating, Box, Typography, } from '@mui/material';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 import AddIcon from '@mui/icons-material/Add';
@@ -12,10 +12,15 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import LocalShippingOutlinedIcon from '@mui/icons-material/LocalShippingOutlined';
 import ReplayOutlinedIcon from '@mui/icons-material/ReplayOutlined';
+import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
+import { books } from '../../utility/books';
+import { useNavigate } from 'react-router-dom';
 
 export const SingleProduct = () => {
   const { productTitle, id } = useParams();
   const [quantity, setQuantity] = useState(1);
+
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -137,6 +142,92 @@ export const SingleProduct = () => {
                       </div>
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+            <div className='product-additional-info'>
+              <div className='product-additional-info-inner'>
+                <Tabs>
+                  <div style={{margin:'1rem 0 2rem 0'}}>
+                    <div className='product-info-tab'>
+                      <TabList>
+                        <Tab><div className='info-tab'>Description</div></Tab>
+                        <Tab><div className='info-tab'>Product info</div></Tab>
+                        <Tab><div className='info-tab'>Reviews</div></Tab>
+                      </TabList>
+                    </div>
+                  </div>
+                  <Divider />
+                  <div className='product-additional-info-content' style={{margin:'1rem 0 2rem 0'}}>
+                    <TabPanel>
+                      <div className=''>
+                        <p className='prodcut-description hd-c'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam et praesentium velit beatae veritatis reiciendis non voluptatem quo, perferendis magni voluptatum dolores. Reiciendis quasi obcaecati facere ducimus assumenda, quas sed voluptatibus vel quis harum repellat earum tempora. Quod autem earum enim possimus laudantium non voluptatum, est illum exercitationem. Cupiditate, quam.</p>
+                        <p className='prodcut-description hd-c'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam et praesentium velit beatae veritatis reiciendis non voluptatem quo, perferendis magni voluptatum dolores. Reiciendis quasi obcaecati facere ducimus assumenda, quas sed voluptatibus vel quis harum repellat earum tempora. Quod autem earum enim possimus laudantium non voluptatum, est illum exercitationem. Cupiditate, quam.</p>
+                        <p className='prodcut-description hd-c'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam et praesentium velit beatae veritatis reiciendis non voluptatem quo, perferendis magni voluptatum dolores. Reiciendis quasi obcaecati facere ducimus assumenda, quas sed voluptatibus vel quis harum repellat earum tempora. Quod autem earum enim possimus laudantium non voluptatum, est illum exercitationem. Cupiditate, quam.</p>
+                      </div>
+                    </TabPanel>
+                    <TabPanel>
+                      <div className=''>
+                        <p className='prodcut-description hd-c'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam et praesentium velit beatae veritatis reiciendis non voluptatem quo, perferendis magni voluptatum dolores. Reiciendis quasi obcaecati facere ducimus assumenda, quas sed voluptatibus vel quis harum repellat earum tempora. Quod autem earum enim possimus laudantium non voluptatum, est illum exercitationem. Cupiditate, quam.</p>
+                        <p className='prodcut-description hd-c'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam et praesentium velit beatae veritatis reiciendis non voluptatem quo, perferendis magni voluptatum dolores. Reiciendis quasi obcaecati facere ducimus assumenda, quas sed voluptatibus vel quis harum repellat earum tempora. Quod autem earum enim possimus laudantium non voluptatum, est illum exercitationem. Cupiditate, quam.</p>
+                      </div>
+                    </TabPanel>
+                    <TabPanel>
+                      <div className=''>
+                        <p className='prodcut-description hd-c'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam et praesentium velit beatae veritatis reiciendis non voluptatem quo, perferendis magni voluptatum dolores. Reiciendis quasi obcaecati facere ducimus assumenda, quas sed voluptatibus vel quis harum repellat earum tempora. Quod autem earum enim possimus laudantium non voluptatum, est illum exercitationem. Cupiditate, quam.</p>                        
+
+                      </div>
+                    </TabPanel>    
+                  </div>
+                  <Divider />
+                </Tabs>
+              </div>
+            </div>
+            <div className='related-products'>
+              <div style={{padding:'1rem'}}>
+                <h1 className='hd-c' style={{fontWeight:'normal', marginBottom:"1rem", marginTop:'1rem'}}>Related Products </h1>
+
+                <div className="book-container-scroll" style={{marginBottom:'1rem', marginTop:'2rem'}}>
+                  <Box className="book-container">
+                    {books?.map((book, i) => (
+                      <div className='book-inner' key={i}>
+                        <div style={{position:'relative'}}>
+                          <div style={{position:'absolute', top:'0', left:'0', zIndex:'1', display:'flex', justifyContent:'space-between', width:'100%',}}>
+                            <div style={{width:'fit-content', height:'fit-content', padding:'8px'}}>
+                              <div style={{background:'red', color:'white', width:'40px', height:'40px', display:'flex', justifyContent:'center', alignItems:'center', padding:'8px', borderRadius:'50%'}}>
+                                <div style={{fontSize:'13px'}}>-15%</div>
+                              </div>
+                            </div>
+                            <div style={{display:'flex', justifyContent:'space-between', alignItems:'center', flexDirection:'column', gap:'8px', color:'white', marginTop:'8px', marginRight:'8px'}}>
+                              <IconButton sx={{color:'white', background: "#bebebe36"}}>
+                                <FavoriteBorderIcon />
+                              </IconButton>
+                              <IconButton sx={{color:'white', background: "#bebebe36"}}>
+                                <VisibilityOutlinedIcon />
+                              </IconButton>
+                            </div>
+                          </div>
+                        </div>
+                        <div className='thumbnail' onClick={() => navigate(`/shop/${book.title.replace(/\s+/g, "-").toLowerCase()}/${book?.id}`)}>
+                          <img src={book.thumbnail} alt="" />
+                        </div>
+                        <div className='book-inner-content'>
+                          <div className='rating' >
+                            <div className='rating-inner'>
+                                <Rating name="size-small" readOnly defaultValue={book.rating} precision={0.1} size="small" />
+                                <span style={{color: '#474747'}}>({book.rating})</span>
+                            </div>
+                          </div>
+                          <p className='title' onClick={() => navigate(`/shop/${book.title.replace(/\s+/g, "-").toLowerCase()}/${book?.id}`)}>{book.title.length <= 40? book.title : book.title.slice(0,40) + '...'}</p>
+                          <div className='author'><a href='#'>{book.author}</a></div>
+                          <p className='price'><CurrencyRupeeIcon fontSize='inherit' sx={{mt:"4px"}} /> {book.price}  </p>
+                          <div className='btn-container'>
+                            <button style={{width:'100%', padding:'0.5rem 1rem'}} className='btn-theme-two'><AddIcon />Add to cart</button>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </Box>
                 </div>
               </div>
             </div>

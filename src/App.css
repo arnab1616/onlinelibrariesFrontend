@@ -401,3 +401,22 @@ a:hover {
     width: 100%;
   }
 }
+
+ul.react-tabs__tab-list {
+  list-style: none;
+}
+
+ul.react-tabs__tab-list li{
+  cursor: pointer;
+  border: none;
+  border-color: transparent;
+}
+
+.react-tabs__tab-panel {
+  opacity: 0;
+  transition: all ease-in-out 0.3s;
+}
+
+.react-tabs__tab-panel.react-tabs__tab-panel--selected {
+  opacity: 1;
+}
