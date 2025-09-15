@@ -22,7 +22,7 @@ const HomePage = () => {
         <div className="book-container-scroll" style={{marginBottom:'1rem', marginTop:'2rem'}}>
           <Box className="book-container">
             {books?.map((book, i) => (
-              <div className='book-inner'>
+              <div className='book-inner' key={i}>
                 <div style={{position:'relative'}}>
                   <div style={{position:'absolute', top:'0', left:'0', zIndex:'1', display:'flex', justifyContent:'space-between', width:'100%',}}>
                     <div style={{width:'fit-content', height:'fit-content', padding:'8px'}}>
@@ -70,7 +70,7 @@ const HomePage = () => {
         <div className="book-container-scroll" style={{marginBottom:'1rem', marginTop:'2rem'}}>
           <Box className="book-container">
             {books?.map((book, i) => (
-              <div className='book-inner'>
+              <div className='book-inner' key={i}>
                 <div style={{position:'relative'}}>
                   <div style={{position:'absolute', top:'0', left:'0', zIndex:'1', display:'flex', justifyContent:'space-between', width:'100%',}}>
                     <div style={{width:'fit-content', height:'fit-content', padding:'8px'}}>
