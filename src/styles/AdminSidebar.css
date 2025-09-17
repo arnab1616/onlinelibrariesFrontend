@@ -1,0 +1,28 @@
+.admin-sidebar-active li {
+    cursor: pointer;
+    transition: all ease-in-out 0.3s;
+    /* margin-bottom: 5px; */
+}
+.css-1yiin9e-MuiButtonBase-root-MuiListItemButton-root:hover {
+    background-color: transparent;
+}
+.admin-sidebar-active li svg{
+    transition: all ease-in-out 0.3s;
+}
+
+.admin-sidebar-active li:hover{
+    color: #027a36;
+    /* background-color: #027a3633; */
+    background-color: transparent;
+}
+.admin-sidebar-active li:hover svg{
+    color: #027a36;
+}
+
+.admin-sidebar-active li.current{
+    color: #027a36;
+    background-color: #027a3633;
+}
+.admin-sidebar-active li.current svg{
+    color: #027a36;
+}
