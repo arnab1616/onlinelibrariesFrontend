@@ -108,8 +108,8 @@ export default function Header() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem onClick={() => navigation('/profile')} >Profile</MenuItem>
+      <MenuItem onClick={() => navigation('/profile')}>My account</MenuItem>
       <MenuItem onClick={() => navigation('/login')}>Login</MenuItem>
     </Menu>
   );

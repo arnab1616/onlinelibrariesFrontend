@@ -11,6 +11,11 @@ import { Cart } from './pages/cart/Cart';
 import { Favorite } from './pages/favorite/Favorite';
 import { Login } from './pages/auth/Login';
 import { SignUp } from './pages/auth/SignUp';
+import { MyProfile } from './pages/my-profile/MyProfile';
+import { AdminLayout } from './admin/layout/AdminLayout';
+import { Dashboard } from './admin/pages/dashboard/Dashboard';
+import { AddProduct } from './admin/pages/add-product/AddProduct';
+import { NotFound } from './components/NotFound';
 
 function App() {
   return (
@@ -19,6 +24,14 @@ function App() {
         {/* Layout route */}
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<SignUp />} />
+
+        <Route path="admin" element={<AdminLayout />}>
+          <Route path='dashboard' index element={<Dashboard />} /> 
+          <Route path="dashboard" element={<Dashboard />} /> 
+          <Route path="add-product" element={<AddProduct />} />
+          <Route path="" element={<NotFound />} />
+        </Route>
+
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path="shop" element={<Shop />} />
@@ -26,6 +39,7 @@ function App() {
           <Route path="contact" element={<Contact />} />
           <Route path="favorites" element={<Favorite />} />
           <Route path="cart" element={<Cart />} />
+          <Route path="profile" element={<MyProfile />} />
           <Route path="shop/:productTitle/:id" element={<SingleProduct />} />
         </Route>
       </Routes>
