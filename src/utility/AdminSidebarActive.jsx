@@ -54,7 +54,7 @@ export const AdminSidebarActive = () => {
                     </ListItemButton>
                 </ListItem>
 
-                <ListItem disablePadding sx={{ display: 'block' }}>
+                <ListItem disablePadding sx={{ display: 'block' }} className={currentPath?.id == 2?'current':''} onClick={() => {NavlinkActivation(2,'add-product')}}>
                     <ListItemButton sx={[{minHeight: 48, px: 2.5, }, open ? {justifyContent: 'initial'} : {justifyContent: 'center'}]}>
                         <ListItemIcon sx={[ {minWidth: 0, justifyContent: 'center'}, open ? {mr: 3} : { mr: 'auto' } ]}>
                             <Inventory2Icon />
@@ -63,7 +63,7 @@ export const AdminSidebarActive = () => {
                     </ListItemButton>
                 </ListItem>
 
-                <ListItem disablePadding sx={{ display: 'block' }}>
+                <ListItem disablePadding sx={{ display: 'block' }} className={currentPath?.id == 3?'current':''} onClick={() => {NavlinkActivation(3,'all-catagories')}}>
                     <ListItemButton sx={[{minHeight: 48, px: 2.5, }, open ? {justifyContent: 'initial'} : {justifyContent: 'center'}]}>
                         <ListItemIcon sx={[ {minWidth: 0, justifyContent: 'center'}, open ? {mr: 3} : { mr: 'auto' } ]}>
                             <CategoryIcon />
@@ -72,16 +72,16 @@ export const AdminSidebarActive = () => {
                     </ListItemButton>
                 </ListItem>
 
-                <ListItem disablePadding sx={{ display: 'block' }}>
+                <ListItem disablePadding sx={{ display: 'block' }} className={currentPath?.id == 4?'current':''} onClick={() => {NavlinkActivation(4,'track-products')}}>
                     <ListItemButton sx={[{minHeight: 48, px: 2.5, }, open ? {justifyContent: 'initial'} : {justifyContent: 'center'}]}>
                         <ListItemIcon sx={[ {minWidth: 0, justifyContent: 'center'}, open ? {mr: 3} : { mr: 'auto' } ]}>
                             <LocalShippingIcon />
                         </ListItemIcon>
-                        <ListItemText primary={'Track Orders'} sx={[ open ? {opacity: 1} : {opacity: 0} ]} />
+                        <ListItemText primary={'Track Products'} sx={[ open ? {opacity: 1} : {opacity: 0} ]} />
                     </ListItemButton>
                 </ListItem>
 
-                <ListItem disablePadding sx={{ display: 'block' }}>
+                <ListItem disablePadding sx={{ display: 'block' }} className={currentPath?.id == 5?'current':''} onClick={() => {NavlinkActivation(5,'contact-support')}}>
                     <ListItemButton sx={[{minHeight: 48, px: 2.5, }, open ? {justifyContent: 'initial'} : {justifyContent: 'center'}]}>
                         <ListItemIcon sx={[ {minWidth: 0, justifyContent: 'center'}, open ? {mr: 3} : { mr: 'auto' } ]}>
                             <ContactSupportIcon />
@@ -93,7 +93,7 @@ export const AdminSidebarActive = () => {
             </List>
             <Divider />
             <List className='admin-sidebar-active'>
-                <ListItem disablePadding sx={{ display: 'block' }}>
+                <ListItem disablePadding sx={{ display: 'block' }} className={currentPath?.id == 6?'current':''} onClick={() => {NavlinkActivation(6,'my-account')}}>
                     <ListItemButton sx={[{minHeight: 48, px: 2.5, }, open ? {justifyContent: 'initial'} : {justifyContent: 'center'}]}>
                         <ListItemIcon sx={[ {minWidth: 0, justifyContent: 'center'}, open ? {mr: 3} : { mr: 'auto' } ]}>
                             <AccountCircleIcon />
@@ -102,7 +102,7 @@ export const AdminSidebarActive = () => {
                     </ListItemButton>
                 </ListItem>
 
-                <ListItem disablePadding sx={{ display: 'block' }}>
+                <ListItem disablePadding sx={{ display: 'block' }} className={currentPath?.id == 7?'current':''} onClick={() => {NavlinkActivation(7,'settings')}}>
                     <ListItemButton sx={[{minHeight: 48, px: 2.5, }, open ? {justifyContent: 'initial'} : {justifyContent: 'center'}]}>
                         <ListItemIcon sx={[ {minWidth: 0, justifyContent: 'center'}, open ? {mr: 3} : { mr: 'auto' } ]}>
                             <SettingsIcon />
