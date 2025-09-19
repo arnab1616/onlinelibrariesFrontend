@@ -6,6 +6,8 @@ import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
+import { Box } from '@mui/material';
+import LoginIcon from '@mui/icons-material/Login';
 
 const drawerWidth = 240;
 
@@ -52,9 +54,14 @@ export const AdminHeader = ({open, handleDrawerOpen}) => {
                 >
                     <MenuIcon />
                 </IconButton>
-                <Typography variant="h6" noWrap component="div">
-                    Admin Panel
-                </Typography>
+                <Box sx={{ display:'flex', alignItems:'center', justifyContent:'space-between', flexGrow: 1, width:'100%' }}>
+                    <Typography variant="h6" noWrap component="div">
+                        Admin Panel
+                    </Typography>
+                    <Box>
+                        <button className='btn-theme-one' style={{padding:'0.4rem 1rem', alignItems:'center'}}><LoginIcon fontSize='inherit' sx={{mr:1}} /> <span>Login</span></button>
+                    </Box>
+                </Box>
             </Toolbar>
         </AppBar>
     )

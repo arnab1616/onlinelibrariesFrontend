@@ -410,6 +410,7 @@ ul.react-tabs__tab-list li{
   cursor: pointer;
   border: none;
   border-color: transparent;
+  outline: none;
 }
 
 .react-tabs__tab-panel {

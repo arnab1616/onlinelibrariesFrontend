@@ -73,7 +73,7 @@ export const Sidebar = ({open, handleDrawerClose}) => {
   return (
     <Drawer variant="permanent" open={open}>
         <DrawerHeader>
-            <div className='logo-header' style={{width:'100%', padding:'5px', display:'flex', alignItems:'center'}}>
+            <div className='logo-header' style={{width:'100%', padding:'10px', display:'flex', alignItems:'center'}}>
                 <img src="/images/logo-2.png" alt="logo" width="100%" />
             </div>
             <IconButton onClick={handleDrawerClose}>

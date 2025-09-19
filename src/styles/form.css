@@ -1,3 +1,13 @@
+form .form-group,
+form .MuiInputBase-root{
+    width: 100%;
+}
+
+.form-group-outer {
+    display: flex;
+    gap: 1rem;
+}
+
 .form-group {
     margin-bottom: 1rem;
 }
@@ -8,6 +18,14 @@
     font-weight: 600;
     margin-bottom: 10px;
     display: block;
+}
+.add-product-form .form-group label {
+    color: rgba(0, 0, 0, 0.64);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: block;
+    text-transform: capitalize;
 }
 
 .form-group input[type="text"],
@@ -24,6 +42,12 @@
     border-radius: 8px;
     font-size: 1rem;
     background-color: white;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
 }
 
 .form-check {
@@ -46,4 +70,17 @@
     padding: 2px;
     accent-color: #027a36;
     cursor: pointer;
+}
+
+form .form-header {
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.add-product-form .product-info-section {
+    padding: 1rem 1rem 2rem;
+    border-radius: 14px;
+    box-shadow: rgba(128, 128, 128, 0.6) 1px 1px 8px 2px;
+    margin-bottom: 3rem;
 }
