@@ -28,6 +28,32 @@ form .MuiInputBase-root{
     text-transform: capitalize;
 }
 
+.add-product-form .form-group label.MuiButtonBase-root {
+  display: flex;
+  font-weight: normal;
+  flex-direction: column;
+  margin: 0;
+}
+.add-product-form .form-group label.MuiButtonBase-root .MuiButton-icon {
+    margin: 0;
+}
+.add-product-form .form-group label.MuiButtonBase-root .MuiButton-icon svg {
+    font-size: 25px;
+}
+.form-group input[type="checkbox"] {
+    /* appearance: none; */
+    width: 15px;
+    height: 15px;
+    border: 2px solid #027a36;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    accent-color: #027a36;
+}
+
+.form-group input[type="checkbox"]:checked {
+    background-color: #027a36;
+}
 .form-group input[type="text"],
 .form-group input[type="password"],
 .form-group input[type="date"],
@@ -44,9 +70,20 @@ form .MuiInputBase-root{
     background-color: white;
 }
 
+.form-group input,
+.form-group select,
+.form-group textarea
+.form-group .MuiBackdrop-root {
+    transition: all ease-in-out 0.3s;
+}
+
 .form-group input:focus,
 .form-group select:focus,
-.form-group textarea:focus {
+.form-group textarea:focus,
+.form-group .MuiBackdrop-root input:focus {
+    outline: 1px solid#027a36;
+}
+.form-group input[type="checkbox"]:focus {
     outline: none;
 }
 

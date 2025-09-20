@@ -35,10 +35,10 @@ export const Contact = () => {
                       <span>
                         Call us:
                         <span style={{color: '#027a36'}}> 
-                        +(406) 555-0120
+                        +(91) 8910692264
                         </span>
                         <br/>
-                        Email: support@example.com
+                        Email: istudycraft@gmail.com
                       </span>
                     </div>
                   </div>
@@ -70,9 +70,9 @@ export const Contact = () => {
                     <div className="cc-info-text">
                       <h6 className="h6 text-capitalize my-0 mb-10">Our Office</h6> 
                       <span>
-                      2972 Westheimer Rd. Santa Ana,
+                      1/2A Bamkim Chatterjee Street, Kolkata, 700073
                       <br/>
-                      Illinois, USA
+                      College Street, West Bengal, India
                       </span>
                     </div>
                   </div>

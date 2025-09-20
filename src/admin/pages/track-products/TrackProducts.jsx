@@ -1,18 +1,12 @@
 import { Box, Typography } from '@mui/material';
 import React from 'react'
 import { PanelHeadline } from '../../../components/admin/PanelHeadline';
-import DashboardChart from '../../../components/admin/dashboard/DashboardChart';
 
-export const Dashboard = () => {
+export const TrackProducts = () => {
   return (
     <Box>
         <div>
             <PanelHeadline />
-            <div className='col-xl-7'>
-                <div className='graph-widget ls-widget'>
-                  <DashboardChart />
-                </div>
-            </div>
             <div>
                 <Typography sx={{ marginBottom: 2 }}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
