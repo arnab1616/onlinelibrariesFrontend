@@ -43,10 +43,10 @@ export const Footer = () => {
                     <br />
                     literary personalities.
 
-                    <span className="d-block mt-3 pt-1 mb-2 pb-1 fw-semibold" >+(91) - 9382522438</span>
+                    <span className="d-block mt-3 pt-1 mb-2 pb-1 fw-semibold" >+(91) 89106 92264</span>
 
                     <span className="d-block">
-                    contact@example.com
+                    istudycraft@gmail.com
                     </span>
                   </div>
                         

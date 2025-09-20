@@ -8,6 +8,7 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Box } from '@mui/material';
 import LoginIcon from '@mui/icons-material/Login';
+import { useNavigate } from 'react-router-dom';
 
 const drawerWidth = 240;
 
@@ -37,6 +38,7 @@ const AppBar = styled(MuiAppBar, {
 
 export const AdminHeader = ({open, handleDrawerOpen}) => {
     const theme = useTheme();
+    const navigate = useNavigate();
     return (
         <AppBar position="fixed" open={open} sx={{backgroundColor:'#027a36'}}>
             <Toolbar>
@@ -59,7 +61,7 @@ export const AdminHeader = ({open, handleDrawerOpen}) => {
                         Admin Panel
                     </Typography>
                     <Box>
-                        <button className='btn-theme-one' style={{padding:'0.4rem 1rem', alignItems:'center'}}><LoginIcon fontSize='inherit' sx={{mr:1}} /> <span>Login</span></button>
+                        <button onClick={() => navigate('/admin-login')} className='btn-theme-one' style={{padding:'0.4rem 1rem', alignItems:'center'}}><LoginIcon fontSize='inherit' sx={{mr:1}} /> <span>Login</span></button>
                     </Box>
                 </Box>
             </Toolbar>

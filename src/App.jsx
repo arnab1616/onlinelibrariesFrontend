@@ -16,12 +16,19 @@ import { AdminLayout } from './admin/layout/AdminLayout';
 import { Dashboard } from './admin/pages/dashboard/Dashboard';
 import { AddProduct } from './admin/pages/add-product/AddProduct';
 import { NotFound } from './components/NotFound';
+import { AllCategories } from './admin/pages/all-categories/AllCategories';
+import { TrackProducts } from './admin/pages/track-products/TrackProducts';
+import { AdminLogin } from './admin/pages/auth/AdminLogin';
+import { ContactSupport } from './admin/pages/contact-support/ContactSupport';
+import { MyAccount } from './admin/pages/my-account/MyAccount';
+import { Settings } from './admin/pages/settings/Settings';
 
 function App() {
   return (
     <Router>
       <Routes>
         {/* Layout route */}
+        <Route path="/admin-login" element={<AdminLogin/>} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<SignUp />} />
 
@@ -29,6 +36,11 @@ function App() {
           <Route path='dashboard' index element={<Dashboard />} /> 
           <Route path="dashboard" element={<Dashboard />} /> 
           <Route path="add-product" element={<AddProduct />} />
+          <Route path="all-catagories" element={<AllCategories />} />
+          <Route path="track-products" element={<TrackProducts />} />
+          <Route path="contact-support" element={<ContactSupport />} />
+          <Route path="my-account" element={<MyAccount />} />
+          <Route path="settings" element={<Settings />} />
           <Route path="" element={<NotFound />} />
         </Route>
 

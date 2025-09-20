@@ -19,7 +19,9 @@ const adminHeaderSlice = createSlice({
   initialState: initialState,
   reducers: {
     activePath: (state, action) => {
-        state.currentPath = action.payload;
+      const current = state.pathNames.find((item) => item.id === action.payload.id)
+      state.currentPath = current;
+      // state.currentPath = action.payload;
     },
     activePathReload: (state, action) => {
       // if(action.payload.path.includes('shop')) {
