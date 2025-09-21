@@ -40,6 +40,9 @@ form .MuiInputBase-root{
 .add-product-form .form-group label.MuiButtonBase-root .MuiButton-icon svg {
     font-size: 25px;
 }
+.form-group input[type="radio"] {
+    accent-color: #027a36;
+}
 .form-group input[type="checkbox"] {
     /* appearance: none; */
     width: 15px;
@@ -77,8 +80,11 @@ form .MuiInputBase-root{
     transition: all ease-in-out 0.3s;
 }
 
-.form-group input:focus,
-.form-group select:focus,
+.form-group input[type="text"]:focus,
+.form-group input[type="password"]:focus,
+.form-group input[type="date"]:focus,
+.form-group input[type="number"]:focus,
+.form-group input[type="email"]:focus,
 .form-group textarea:focus,
 .form-group .MuiBackdrop-root input:focus {
     outline: 1px solid#027a36;
