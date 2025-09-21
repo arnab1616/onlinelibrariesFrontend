@@ -1,0 +1,194 @@
+.profile-section {
+    padding: 1rem;
+}
+
+.top-card {
+    padding: 4px 2rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+.top-card-inner {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background-color: #87ceeb30;
+    padding: 1rem 2rem;
+    border-radius: 14px;
+    flex-wrap: wrap;
+    position: relative;
+}
+.profile-logo-box {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    border: 2px solid #027a36;
+    border-radius: 50%;
+    position: relative;
+
+    .profile-logo-box-inner {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background-size: cover;
+        position: relative;
+    }
+}
+
+.edit-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-radius: 50%;
+    border: 1px solid #ffffff87;
+
+    button {
+        background: #027a36;
+        color: white;
+        transition: all ease-in-out 0.3s;
+    }
+    button:hover {
+        background: #027a36b9;
+    }
+}
+
+.profile-info-tab-outer {
+    margin: 1rem 0px 2rem;
+  min-width: fit-content;
+}
+.profile-tab-section{
+    margin-top: 1rem;
+}
+
+.profile-tab-section .react-tabs {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+.profile-tab-section .profile-info-tab {
+    overflow: auto;
+    position: relative;
+}
+.profile-tab-section .profile-info-tab ul{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: start;
+  align-items: center;
+  padding: 5px 10px;
+}
+.profile-tab-section .profile-info-tab ul li {
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all ease-in-out 0.3s;
+  border-radius: 14px;
+  cursor: pointer;
+  border: 0;
+  border-color: transparent;
+  padding: 0.5rem 1.2rem;
+  border-radius: 14px;
+  text-transform: capitalize;
+  box-shadow: 1px 1px 2px 1px #80808057;
+  color: black;
+  min-width: 100%;
+  display: block;
+}
+.profile-tab-section .profile-info-tab ul li .profile-tab {
+  /* padding: 0.5rem 1.2rem;
+  border-radius: 14px;
+  text-transform: capitalize;
+  box-shadow: 1px 1px 2px 1px #80808057; */
+  transition: all ease-in-out 0.3s;
+}
+.profile-tab-section .profile-info-tab ul li.react-tabs__tab--selected {
+  color: white;
+  background-color: #027a36;
+}
+
+.profile-tab-section .profile-info-tab ul li.react-tabs__tab--selected:hover {
+  color: white;
+  background-color: #027a36;
+}
+
+.profile-tab-section .profile-info-tab ul li:hover {
+  color: #027a36;
+  /* color: white;
+  background-color: #027a36; */
+}
+
+@media (max-width: 567px) {
+    .top-card {
+        padding: 10px 0;
+    }
+    .top-card-inner {
+        justify-content: center;
+    }
+    .profile-tab-section .react-tabs {
+        display: block;
+        gap: 0;
+    }
+    .profile-info-tab-outer {
+        margin: 1rem 0px 2rem;
+        min-width: 100%;
+    }
+    .profile-tab-section .profile-info-tab ul{
+        width: 100%;
+    }
+    .profile-tab-section .profile-info-tab {
+        overflow: auto;
+        position: relative;
+    }
+    .profile-tab-section .profile-info-tab ul{
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        gap: 1rem;
+        justify-content: start;
+        align-items: center;
+        padding: 10px 0;
+    }
+    .profile-tab-section .profile-info-tab ul li {
+        font-size: 1rem;
+        font-weight: 600;
+        transition: all ease-in-out 0.3s;
+        border-radius: 14px;
+        cursor: pointer;
+        border: 0;
+        border-color: transparent;
+        padding: 0.5rem 1.2rem;
+        border-radius: 14px;
+        text-transform: capitalize;
+        box-shadow: 1px 1px 2px 1px #80808057;
+        color: black;
+        min-width: fit-content;
+        display: block;
+    }
+    .profile-tab-section .profile-info-tab ul li .profile-tab {
+        /* padding: 0.5rem 1.2rem;
+        border-radius: 14px;
+        text-transform: capitalize;
+        box-shadow: 1px 1px 2px 1px #80808057; */
+        transition: all ease-in-out 0.3s;
+    }
+    .profile-tab-section .profile-info-tab ul li.react-tabs__tab--selected {
+        color: white;
+        background-color: #027a36;
+    }
+
+    .profile-tab-section .profile-info-tab ul li.react-tabs__tab--selected:hover {
+        color: white;
+        background-color: #027a36;
+    }
+
+    .profile-tab-section .profile-info-tab ul li:hover {
+        color: #027a36;
+        /* color: white;
+        background-color: #027a36; */
+    }
+    .my-profile-info-section .form-group-outer{
+        flex-wrap: wrap;
+        gap: 0;
+    }
+}
