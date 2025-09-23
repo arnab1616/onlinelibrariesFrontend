@@ -29,6 +29,7 @@ export const MyOrder = () => {
                 </div>
             </div>
             <div className='order-list-section'>
+                <h3 style={{textTransform:"capitalize", fontWeight:'600', marginBottom:'1.5rem'}}>Your order history</h3>
                 <div className='order-list-container'>
                     {books.map((book, index) => (
                         <div className='order-item' key={index}>

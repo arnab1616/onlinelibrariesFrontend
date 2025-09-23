@@ -22,7 +22,7 @@ export const MyProfileInfo = () => {
                     </div>
                     <div className='form-group'>
                         <label htmlFor="">Your Gender</label>
-                        <RadioGroup sx={{flexDirection:'row', '& .Mui-checked': {color:'#027a36'}}}>
+                        <RadioGroup sx={{flexDirection:'row', '& .css-13lvt8g-MuiButtonBase-root-MuiRadio-root.Mui-checked': {color:'#027a36'}}}>
                             <FormControlLabel value="female" control={<Radio />} label="Female" />
                             <FormControlLabel value="male" control={<Radio />} label="Male" />
                         </RadioGroup>

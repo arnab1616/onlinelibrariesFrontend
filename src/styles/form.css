@@ -72,6 +72,15 @@ form .MuiInputBase-root{
     font-size: 1rem;
     background-color: white;
 }
+.form-group .MuiInputBase-root {
+    border-radius: 8px;
+}
+.form-group .MuiInputBase-root input:focus {
+    outline: 1px solid #027a36 ;
+}
+.form-group .MuiSelect-select {
+    padding: 15px 20px;
+}
 
 .form-group input,
 .form-group select,
