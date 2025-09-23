@@ -9,6 +9,8 @@ import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
+import { MyAddresses } from '../../components/my-profile/MyAddresses';
+import { MyPayments } from '../../components/my-profile/MyPayments';
 
 export const MyProfile = () => {
   return (
@@ -35,11 +37,11 @@ export const MyProfile = () => {
               <MyOrder />
             </TabPanel>
             <TabPanel>
-              <div className=''>
-                <p className='prodcut-description hd-c'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam et praesentium velit beatae veritatis reiciendis non voluptatem quo, perferendis magni voluptatum dolores. Reiciendis quasi obcaecati facere ducimus assumenda, quas sed voluptatibus vel quis harum repellat earum tempora. Quod autem earum enim possimus laudantium non voluptatum, est illum exercitationem. Cupiditate, quam.</p>                        
-
-              </div>
-            </TabPanel>    
+              <MyAddresses />
+            </TabPanel>
+            <TabPanel>
+              <MyPayments />
+            </TabPanel> 
           </div>
         </Tabs>
       </div>

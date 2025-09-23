@@ -125,6 +125,12 @@
   background-color: #027a36; */
 }
 
+.my-profile-sub-title {
+    text-transform: capitalize;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
 .my-order-section .filter-bar-section {
     width: 100%;
     display: flex;
@@ -232,6 +238,106 @@
     }
 }
 
+.my-addresses-section {
+    .new-address-section .new-address-inner {
+        cursor: pointer;
+        /* width: fit-content; */
+        width: 100%;
+        padding: 1rem 2rem;
+        box-shadow: 1px 1px 2px 1px #80808057;
+        height: fit-content;
+        /* border-radius: 14px; */
+        border: 1px solid #027a36;
+        transition: all ease-in-out 0.3s;
+
+        .new-address-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            width: fit-content;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: #027a36;
+        }
+    }
+}
+
+.address-form-section {    
+    width: 100%;
+    opacity: 0;
+    transition: all ease-in-out 0.3s;
+    visibility: none;
+    display: none;
+
+    .form-group label {
+        font-size: 1rem;
+        font-weight: 500;
+    }
+}
+
+.address-form-section.active {
+    visibility:visible;
+    opacity: 1;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: nowrap;
+
+    .form-group label {
+        font-size: 1rem;
+        font-weight: 500;
+    }
+
+}
+
+.iframe {
+    width: 100%;
+    height: 400px;
+    border: 0;
+    border-radius: 14px;
+}
+
+.address-list-section {
+    margin-top: 2rem;
+
+    .address-list-container .address-item {
+        padding: 1rem 2rem;
+        box-shadow: 1px 1px 2px 1px #80808057;
+        width: 100%;
+        margin-bottom: 1rem;
+
+        .address-item-inner {
+            position: relative;
+
+            .address-action {
+                position: absolute;
+                top: 0;
+                right: 0;
+                display: flex;
+                align-items: center;
+                justify-content: end;
+                width: 100%;
+            }
+        }
+
+        .address-type {
+            background-color: rgba(128, 128, 128, 0.19);
+            padding: 0.2rem 0.5rem;
+            width: fit-content;
+        }
+        .address-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        .address-details {
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-top: 0.5rem;
+        }
+    }
+}
+
 @media (max-width: 567px) {
     .top-card {
         padding: 10px 0;
@@ -301,7 +407,7 @@
         /* color: white;
         background-color: #027a36; */
     }
-    .my-profile-info-section .form-group-outer{
+    .form-group-outer{
         flex-wrap: wrap;
         gap: 0;
     }
@@ -315,5 +421,19 @@
     }
     .status-text {
         display: none;
+    }
+
+    .my-addresses-section .new-address-section .new-address-inner {
+        padding: 1rem;
+    }
+
+    .address-form-section.active {
+        flex-wrap: wrap;
+    }
+    .address-form-section {
+        flex-wrap: wrap;
+    }
+    .iframe {
+        height: auto;
     }
 }
