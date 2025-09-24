@@ -88,3 +88,27 @@ button[type="submit"].btn-theme-four:hover,
     background: #000000a9 !important;
     color: white;
 }
+
+button[type="submit"].btn-theme-five,
+.btn-theme-five {
+    color: white;
+    padding: 0.8rem 1rem !important;
+    border-radius: 50px !important;
+    transition: all 0.35s ease-in-out;
+    background: #9801dd !important;
+    font-size: 1rem;
+    font-style: unset;
+    text-transform: capitalize;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid rgba(128, 128, 128, 0.403) !important; */
+}
+
+button[type="submit"].btn-theme-five:hover,
+.btn-theme-five:hover{
+    background: #000000a9 !important;
+    color: white;
+}

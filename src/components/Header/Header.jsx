@@ -30,11 +30,11 @@ import PersonIcon from '@mui/icons-material/Person';
 import { Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Stack } from '@mui/material';
 import { useNavigate, useNavigation } from 'react-router-dom';
 import { useSelector, useDispatch } from "react-redux";
-import { activePath, activePathReload } from '../../redux/headerSlice';
+import { activePath, activePathReload, setTabIndex } from '../../redux/headerSlice';
 
 
 export default function Header() {
-  const {currentPath} = useSelector((state) => state.header);
+  const { currentPath, tabIndex } = useSelector((state) => state.header);
   const [anchorEl, setAnchorEl] = useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
 
@@ -108,9 +108,9 @@ export default function Header() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={() => navigation('/profile')} >Profile</MenuItem>
-      <MenuItem onClick={() => navigation('/profile')}>My account</MenuItem>
-      <MenuItem onClick={() => navigation('/login')}>Login</MenuItem>
+      <MenuItem onClick={() => {handleMenuClose(); navigation('/profile')}} >Profile</MenuItem>
+      <MenuItem onClick={() => {handleMenuClose(); navigation('/profile')}}>My account</MenuItem>
+      <MenuItem onClick={() => {handleMenuClose(); navigation('/login')}}>Login</MenuItem>
     </Menu>
   );
 
@@ -278,7 +278,7 @@ export default function Header() {
           </Box>
           <Box sx={{ flexGrow: 1 }} />
           <Box className='header-icon-box' sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <IconButton className={currentPath?.id == 5 ? 'current':''} size="large" aria-label="show 4 new mails" color="inherit" onClick={() => navigation('/favorites')}>
+            <IconButton className={tabIndex == 3 && window.location.pathname == '/profile' ? 'current':''} size="large" aria-label="show 4 new mails" color="inherit" onClick={() => {dispatch(setTabIndex(3)); navigation('/profile')}}>
               <Badge badgeContent={1} color="error">
                 <FavoriteBorderRoundedIcon />
               </Badge>
@@ -359,7 +359,7 @@ export default function Header() {
               </List>
             </Box>
             <Box className='header-icon-box' sx={{ display: { xs: 'flex', md: 'none' } }}>
-              <IconButton className={currentPath?.id == 5 ? 'current':''} size="large" aria-label="show 4 new mails" color="inherit" onClick={() => navigation('/favorites')}>
+              <IconButton className={tabIndex == 3 && window.location.pathname == '/profile' ? 'current':''} size="large" aria-label="show 4 new mails" color="inherit" onClick={() => {dispatch(setTabIndex(3)); navigation('/profile')}}>
                 <Badge badgeContent={1} color="error">
                   <FavoriteBorderRoundedIcon />
                 </Badge>

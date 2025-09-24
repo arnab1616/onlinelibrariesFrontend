@@ -11,9 +11,9 @@ function handleClick(event) {
   console.info('You clicked a breadcrumb.');
 }
 
-export default function IconBreadcrumbs({pageName}) {
+export default function IconBreadcrumbs({pageName, color}) {
   return (
-      <nav aria-label="Breadcrumb" className="breadcrumb text--xsmall">
+      <nav aria-label="Breadcrumb" className={color? `breadcrumb text--xsmall ${color}` :"breadcrumb text--xsmall"}>
         <ol className="breadcrumb__list" role="list">
             <li className="breadcrumb__item">
                 <Link className="breadcrumb__link" to="/">

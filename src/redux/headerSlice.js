@@ -11,6 +11,7 @@ const initialState = {
         {id:6, pathName:"Cart", path:'/cart', active:false},
     ],
     currentPath: {id:1, pathName:"Home", path:'/', active:true},
+    tabIndex: 0,
 }
 
 const headerSlice = createSlice({
@@ -28,8 +29,11 @@ const headerSlice = createSlice({
         state.currentPath = current;
       }
     },
+    setTabIndex: (state, action) => {
+      state.tabIndex = action.payload;
+    }
   },
 });
 
-export const { activePath, activePathReload } = headerSlice.actions;
+export const { activePath, activePathReload, setTabIndex } = headerSlice.actions;
 export default headerSlice.reducer;
