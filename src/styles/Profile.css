@@ -338,6 +338,114 @@
     }
 }
 
+
+
+.my-favorites-section .favorite-list-section {
+    margin-top: 2rem;
+
+    .favorite-list-container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .favorite-item {
+        padding: 1rem 2rem;
+        box-shadow: 1px 1px 2px 1px #80808057;
+        border-radius: 14;
+        height: fit-content;
+        transition: all ease-in-out 0.3s;
+
+        .favorite-thumbnail {
+            position: relative;
+            width: fit-content;
+            cursor: pointer;
+        }
+
+        .favorite-thumbnail .thumbnail-inner {
+            width: 80px;
+            height: 100px;
+            background-size: cover;
+            border-radius: 14px;
+        }
+
+        .favorite-item-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .favorite-title {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            cursor: pointer;
+        }
+        .favorite-price {
+            display: flex;
+            width: fit-content;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #027a36;
+        }
+    }
+    .favorite-item:hover {
+        box-shadow: 1px 1px 5px 2px #80808057;
+    }
+    .favorite-item:hover .favorite-title {
+        color: #027a36;
+    }
+
+    .price-container {
+        display: flex;
+        align-items: end;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+    .price-container .price {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #027a36;
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+    .price-container .price-discount {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 600;
+        position: relative;
+        font-size: 1rem;
+        color: rgb(96, 96, 96);
+    }
+    .price-container .price-discount::before {
+        content: "";
+        position: absolute;
+        top: 10px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: rgba(255, 0, 0, 0.844);
+        transform: rotate(-20deg);
+        right: 0;
+    }
+    .price-container .price-save {
+        height: 100%;
+        padding: 3px 8px;
+        background-color: red;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 600;
+        font-size: 0.8rem;
+    }
+}
+
 @media (max-width: 567px) {
     .top-card {
         padding: 10px 0;
