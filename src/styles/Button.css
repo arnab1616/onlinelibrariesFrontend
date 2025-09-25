@@ -12,7 +12,7 @@ button[type="submit"].btn-theme-one,
     font-weight: 600;
     display: flex;
     justify-content: center;
-    /* align-items: center; */
+    align-items: center;
 }
 button[type="submit"].btn-theme-one:hover,
 .btn-theme-one:hover{
@@ -57,6 +57,7 @@ button[type="submit"].btn-theme-three,
     font-weight: 600;
     display: flex;
     justify-content: center;
+    align-items: center;
     border: 1px solid rgba(128, 128, 128, 0.403) !important;
 }
 
@@ -80,6 +81,7 @@ button[type="submit"].btn-theme-four,
     font-weight: 600;
     display: flex;
     justify-content: center;
+    align-items: center;
     border: 1px solid rgba(128, 128, 128, 0.403) !important;
 }
 
