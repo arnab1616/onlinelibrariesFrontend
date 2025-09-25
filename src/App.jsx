@@ -22,6 +22,7 @@ import { AdminLogin } from './admin/pages/auth/AdminLogin';
 import { ContactSupport } from './admin/pages/contact-support/ContactSupport';
 import { MyAccount } from './admin/pages/my-account/MyAccount';
 import { Settings } from './admin/pages/settings/Settings';
+import { OrderDetails } from './pages/order-details/OrderDetails';
 
 function App() {
   return (
@@ -53,6 +54,7 @@ function App() {
           <Route path="cart" element={<Cart />} />
           <Route path="profile" element={<MyProfile />} />
           <Route path="shop/:productTitle/:id" element={<SingleProduct />} />
+          <Route path="order-details/:productTitle/:orderId" element={<OrderDetails />} />
         </Route>
       </Routes>
     </Router>
