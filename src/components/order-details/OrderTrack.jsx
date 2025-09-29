@@ -16,6 +16,9 @@ const steps = [
   {
     label: 'Shipped',
     description: 'On 22 sep Monday 2025',
+  },{
+    label: 'Out for delivery',
+    description: 'Your order is out for delivery',
   },
   {
     label: 'Delivered',
@@ -40,9 +43,10 @@ export default function OrderTrack() {
 
   return (
     <Box sx={{ maxWidth: 400 }}>
-      <Stepper activeStep={activeStep} orientation="vertical">
+      {/* sx={{'& .MuiStepConnector-line':{borderColor:'#027a36', borderLeftWidth: '1px'}, '& .MuiStepContent-root': {borderLeft:'2px solid #00d35cff'}}} */}
+      <Stepper activeStep={activeStep} orientation="vertical" >
         {steps.map((step, index) => (
-          <Step key={step.label} >
+          <Step key={step.label} sx={{'& .Mui-completed .MuiSvgIcon-root':{color:'#027a36'}}}>
             <StepLabel
               optional={
                 index === steps.length - 1 && activeStep !== steps.length ? (
