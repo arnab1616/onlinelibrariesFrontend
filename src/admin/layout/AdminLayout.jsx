@@ -6,6 +6,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Typography from '@mui/material/Typography';
 import { AdminHeader } from '../../components/admin/header/AdminHeader';
 import { Sidebar } from '../../components/admin/sidebar/Sidebar';
+import '../../styles/Admin.css';
 
 
 const DrawerHeader = styled('div')(({ theme }) => ({
