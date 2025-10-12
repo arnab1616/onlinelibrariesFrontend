@@ -1,0 +1,42 @@
+/* {
+  padding: 0 1rem;
+} */
+
+.admin-info-tab {
+    width: fit-content;
+    border: 1px solid #027a365c;
+    padding: 0.4rem;
+    border-radius: 14px;
+    margin-bottom: 1rem;
+}
+.admin-info-tab ul{
+    width: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+.admin-info-tab ul li {
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all ease-in-out 0.3s;
+    border-radius: 14px;
+    cursor: pointer;
+    border: 0;
+    border-color: transparent;
+}
+.admin-info-tab ul li .info-tab {
+    background-color: #027a362e;
+    padding: 0.4rem 1rem;
+    border-radius: 14px;
+    transition: all ease-in-out 0.3s;
+}
+.admin-info-tab ul li.react-tabs__tab--selected .info-tab {
+    color: white;
+    background-color: #027a36;
+}
+
+.admin-info-tab ul li:hover {
+    color: #027a36;
+}
