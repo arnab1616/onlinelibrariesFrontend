@@ -1,7 +1,7 @@
 import { InputLabel, ListItem, MenuItem, Select } from '@mui/material';
-import InputFileCoverImageUpload from './InputFileCoverImageUpload';
-import InputFileContentImageUpload from './InputFileContentImageUpload';
-import InputFileProductImageUpload from './InputFileProductImageUpload';
+import InputFileCoverImageUpload from './components/InputFileCoverImageUpload';
+import InputFileContentImageUpload from './components/InputFileContentImageUpload';
+import InputFileProductImageUpload from './components/InputFileProductImageUpload';
 import AddIcon from '@mui/icons-material/Add';
 
 export const FormInfoBox = () => {

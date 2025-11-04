@@ -21,7 +21,7 @@ import ContactSupportIcon from '@mui/icons-material/ContactSupport';
 import SettingsIcon from '@mui/icons-material/Settings';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { activePath, activePathReload } from '../redux/adminHeaderSlice';
+import { activePath, activePathReload } from '../redux/admin/adminHeaderSlice';
 
 export const AdminSidebarActive = () => {
     const { currentPath } = useSelector((state) => state.adminHeader);
