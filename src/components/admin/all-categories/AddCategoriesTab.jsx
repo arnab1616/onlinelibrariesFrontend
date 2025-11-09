@@ -4,7 +4,7 @@ import CategoryStepper from './components/CategoryStepper'
 import SubCategoryInputs from './components/SubCategoryInputs';
 import SubSubCategoryInputs from './components/SubSubCategoryInputs';
 import { useDispatch, useSelector } from 'react-redux';
-import { setActiveStep } from '../../../redux/admin/adminCategorySlice';
+import { setActiveStep } from '../../../redux/slices/admin/adminCategorySlice';
 
 export const AddCategoriesTab = () => {
   const {activeStep} = useSelector((state) => state.adminCategory);

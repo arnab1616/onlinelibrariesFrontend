@@ -30,7 +30,7 @@ import PersonIcon from '@mui/icons-material/Person';
 import { Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Stack } from '@mui/material';
 import { useNavigate, useNavigation } from 'react-router-dom';
 import { useSelector, useDispatch } from "react-redux";
-import { activePath, activePathReload, setTabIndex } from '../../redux/headerSlice';
+import { activePath, activePathReload, setTabIndex } from '../../redux/slices/headerSlice';
 
 
 export default function Header() {

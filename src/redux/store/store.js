@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
-import headerSlice from '../redux/headerSlice';
-import adminHeaderSlice from '../redux/admin/adminHeaderSlice';
-import adminCategorySlice from '../redux/admin/adminCategorySlice';
+import headerSlice from '../slices/headerSlice';
+import adminHeaderSlice from '../slices/admin/adminHeaderSlice';
+import adminCategorySlice from '../slices/admin/adminCategorySlice';
 
 
 export const store = configureStore({
