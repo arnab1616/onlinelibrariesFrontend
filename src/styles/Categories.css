@@ -4,10 +4,12 @@
 
     .swiper-wrapper-container {
         margin-bottom: 1rem;
-        /* overflow: hidden; */
-        overflow: auto;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
     }
-
     .swiper-wrapper {
         position: relative;
         width: 100%;
@@ -17,6 +19,9 @@
         transition-property: transform;
         box-sizing: content-box;
         flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
         /* animation: slide 35s linear infinite; */
 
         .swiper-slide {
@@ -32,6 +37,7 @@
             backface-visibility: hidden;
             cursor: pointer;
             margin-bottom: 12px;
+             flex: 0 0 auto;
 
             .ap-multicolumn__image-wrapper {
                 max-width: 80px;
@@ -69,6 +75,46 @@
     }
 }
 
+.swiper-wrapper-container:hover .scroll-button {
+  opacity: 1;
+  scale: 1;
+  transition: all ease-in-out 0.3s;
+  /* display: block;
+  visibility: visible; */
+  position: relative;
+}
+.scroll-button {
+  opacity: 0;
+  scale: 0;
+  /* transition: all ease-in-out 0.3s; */
+  /* display: none;
+  visibility: hidden; */
+  position: absolute;
+  transition: all ease-in-out 0.3s;
+}
+@media (max-width: 768px) {
+  .swiper-slide {
+    flex: 0 0 100%;  /* Take full width */
+    margin-right: 0;
+  }
+
+  .swiper-wrapper-container {
+    position: relative;
+  }
+
+  .swiper-wrapper {
+    scroll-snap-type: x mandatory;
+  }
+
+  .swiper-slide {
+    scroll-snap-align: center;
+  }
+
+  /* Optional: hide navigation buttons on mobile */
+  .btn-theme-one {
+    display: none;
+  }
+}
 /* @keyframes slide {
     from { transform: translateX(0); }
     to   { transform: translateX(-20%); }

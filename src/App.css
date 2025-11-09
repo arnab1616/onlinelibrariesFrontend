@@ -95,7 +95,7 @@
 }
 
 .book-container-scroll {
-  overflow: auto;
+  overflow: hidden;
   padding-bottom: 1rem;
   position: relative;
 }
@@ -106,6 +106,9 @@
   /* justify-content: center; */
   align-items: center;
   gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
 }
 
 .book-container .book-inner {
@@ -118,7 +121,7 @@
   overflow: hidden;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
-  height: 520px;
+  height: 400px;
 }
 
 .book-container .book-inner:hover {
@@ -156,7 +159,7 @@
 }
 
 .book-container .book-inner .thumbnail{
-  height: 300px;
+  height: 200px;
   overflow: hidden;
 
   img {
@@ -241,6 +244,19 @@
       /* background-color: #027a36; */
       opacity: 1;
     }
+    
+  }
+  .book-container .book-inner .thumbnail{
+    height: 160px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      transition: all 0.3s ease-in-out;
+      object-fit: cover;
+    }
+    
   }
 }
 

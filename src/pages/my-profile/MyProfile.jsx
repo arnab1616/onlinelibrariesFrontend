@@ -15,7 +15,7 @@ import { MyPayments } from '../../components/my-profile/MyPayments';
 import { MyFavorites } from '../../components/my-profile/MyFavorites';
 import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { setTabIndex } from '../../redux/headerSlice';
+import { setTabIndex } from '../../redux/slices/headerSlice';
 
 export const MyProfile = () => {
   const { tabIndex } = useSelector((state) => state.header);
