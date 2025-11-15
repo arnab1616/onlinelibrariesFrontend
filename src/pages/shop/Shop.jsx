@@ -2,7 +2,7 @@ import '..//../styles/Shop.css';
 import IconBreadcrumbs from '../../components/IconBreadcrumbs';
 import { Categories } from '../../components/Categories/Categories';
 import { books } from '../../utility/books';
-import { Box, IconButton, Rating } from '@mui/material';
+import { Box, CircularProgress, IconButton, Rating } from '@mui/material';
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 import AddIcon from '@mui/icons-material/Add';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
@@ -11,9 +11,28 @@ import { FilterSidebar } from './components/FilterSidebar';
 import { FilterModal } from './components/FilterModal';
 import FilterListAltIcon from '@mui/icons-material/FilterListAlt';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../redux/slices/cart/cartSlice';
 
 export const Shop = () => {
   const [modal, setModal] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [bookId, setBookId] = useState(null);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const handleAddtoCart = (id) => {
+    console.log("cart increasing");
+    setBookId(id);
+    setLoading(true);
+    setTimeout(() => {
+      dispatch(addToCart(id));
+      setLoading(false);
+      setBookId(null);
+      navigate('/cart');
+    }, 1000);
+  }
 
   const toggleModal = () => {
     setModal(!modal);
@@ -33,92 +52,100 @@ export const Shop = () => {
       </div> */}
 
       <Categories />
-      
+
       <section className='product-section'>
         <div className='filter-section'>
           <FilterSidebar />
         </div>
         <div className='product-container'>
           <div>
-            <div style={{padding:'1rem', marginTop:'1rem'}}>
+            <div style={{ padding: '1rem', marginTop: '1rem' }}>
               <Box className='filter-btn-box'>
-                <button type='button' className='btn-theme-two' style={{alignItems:'center', gap:'5px'}} onClick={toggleModal}><p>Filters</p> <FilterListAltIcon color='inherit' fontSize='inherit' /></button>
+                <button type='button' className='btn-theme-two' style={{ alignItems: 'center', gap: '5px' }} onClick={toggleModal}><p>Filters</p> <FilterListAltIcon color='inherit' fontSize='inherit' /></button>
               </Box>
-              <h1 className='hd-c' style={{fontWeight:'normal', marginBottom:"1rem", marginTop:'2rem'}}>Current bestselling books  </h1>
-              <div className="book-container-scroll" style={{marginBottom:'1rem', marginTop:'2rem'}}>
-                <Box className="book-container" style={{flexWrap:'wrap'}}>
+              <h1 className='hd-c' style={{ fontWeight: 'normal', marginBottom: "1rem", marginTop: '2rem' }}>Current bestselling books  </h1>
+              <div className="book-container-scroll" style={{ marginBottom: '1rem', marginTop: '2rem' }}>
+                <Box className="book-container" style={{ flexWrap: 'wrap' }}>
                   {books?.map((book, i) => (
                     <div className='book-inner' key={i}>
-                      <div style={{position:'relative'}}>
-                        <div style={{position:'absolute', top:'0', left:'0', zIndex:'1', display:'flex', justifyContent:'space-between', width:'100%',}}>
-                          <div style={{width:'fit-content', height:'fit-content', padding:'8px'}}>
-                            <div style={{background:'red', color:'white', width:'40px', height:'40px', display:'flex', justifyContent:'center', alignItems:'center', padding:'8px', borderRadius:'50%'}}>
-                              <div style={{fontSize:'13px'}}>-15%</div>
+                      <div style={{ position: 'relative' }}>
+                        <div style={{ position: 'absolute', top: '0', left: '0', zIndex: '1', display: 'flex', justifyContent: 'space-between', width: '100%', }}>
+                          <div style={{ width: 'fit-content', height: 'fit-content', padding: '8px' }}>
+                            <div style={{ background: 'red', color: 'white', width: '40px', height: '40px', display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '8px', borderRadius: '50%' }}>
+                              <div style={{ fontSize: '13px' }}>-15%</div>
                             </div>
                           </div>
-                          <div style={{display:'flex', justifyContent:'space-between', alignItems:'center', flexDirection:'column', gap:'8px', color:'white', marginTop:'8px', marginRight:'8px'}}>
-                            <IconButton sx={{color:'white', background: "#bebebe36"}}>
+                          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexDirection: 'column', gap: '8px', color: 'white', marginTop: '8px', marginRight: '8px' }}>
+                            <IconButton sx={{ color: 'white', background: "#bebebe36" }}>
                               <FavoriteBorderIcon />
                             </IconButton>
-                            <IconButton sx={{color:'white', background: "#bebebe36"}}>
+                            <IconButton sx={{ color: 'white', background: "#bebebe36" }}>
                               <VisibilityOutlinedIcon />
                             </IconButton>
                           </div>
                         </div>
                       </div>
-                      <div className='thumbnail'>
+                      <div className='thumbnail' onClick={() => navigate(`/shop/${book.title.replace(/\s+/g, "-").toLowerCase()}/${book?.id}`)}>
                         <img src={book.thumbnail} alt="" />
                       </div>
                       <div className='book-inner-content'>
                         <div className='rating' >
                           <div className='rating-inner'>
-                              <Rating name="size-small" readOnly defaultValue={book.rating} precision={0.1} size="small" />
-                              <span style={{color: '#474747'}}>({book.rating})</span>
+                            <Rating name="size-small" readOnly defaultValue={book.rating} precision={0.1} size="small" />
+                            <span style={{ color: '#474747' }}>({book.rating})</span>
                           </div>
                         </div>
-                        <p className='title'>{book.title.length <= 40? book.title : book.title.slice(0,40) + '...'}</p>
+                        <p className='title' onClick={() => navigate(`/shop/${book.title.replace(/\s+/g, "-").toLowerCase()}/${book?.id}`)}>{book.title.length <= 40 ? book.title : book.title.slice(0, 40) + '...'}</p>
                         <div className='author'><a href='#'>{book.author}</a></div>
-                        <p className='price'><CurrencyRupeeIcon fontSize='inherit' sx={{mt:"4px"}} /> {book.price}  </p>
+                        <p className='price'><CurrencyRupeeIcon fontSize='inherit' sx={{ mt: "4px" }} /> {book.price}  </p>
                         <div className='btn-container'>
-                          <button style={{width:'100%', padding:'0.5rem 1rem'}} className='btn-theme-two'><AddIcon />Add to cart</button>
+                          <button disabled={loading} onClick={() => handleAddtoCart(book.id)} style={{ width: '100%', padding: '0.5rem 1rem' }} className='btn-theme-two'>
+                            {!loading && <AddIcon />}
+                            {loading && bookId === book.id && <CircularProgress size={20} color='inhert' sx={{ mr: 2 }} />}
+                            Add to cart
+                          </button>
                         </div>
                       </div>
                     </div>
                   ))}
                   {books?.map((book, i) => (
                     <div className='book-inner' key={i}>
-                      <div style={{position:'relative'}}>
-                        <div style={{position:'absolute', top:'0', left:'0', zIndex:'1', display:'flex', justifyContent:'space-between', width:'100%',}}>
-                          <div style={{width:'fit-content', height:'fit-content', padding:'8px'}}>
-                            <div style={{background:'red', color:'white', width:'40px', height:'40px', display:'flex', justifyContent:'center', alignItems:'center', padding:'8px', borderRadius:'50%'}}>
-                              <div style={{fontSize:'13px'}}>-15%</div>
+                      <div style={{ position: 'relative' }}>
+                        <div style={{ position: 'absolute', top: '0', left: '0', zIndex: '1', display: 'flex', justifyContent: 'space-between', width: '100%', }}>
+                          <div style={{ width: 'fit-content', height: 'fit-content', padding: '8px' }}>
+                            <div style={{ background: 'red', color: 'white', width: '40px', height: '40px', display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '8px', borderRadius: '50%' }}>
+                              <div style={{ fontSize: '13px' }}>-15%</div>
                             </div>
                           </div>
-                          <div style={{display:'flex', justifyContent:'space-between', alignItems:'center', flexDirection:'column', gap:'8px', color:'white', marginTop:'8px', marginRight:'8px'}}>
-                            <IconButton sx={{color:'white', background: "#bebebe36"}}>
+                          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexDirection: 'column', gap: '8px', color: 'white', marginTop: '8px', marginRight: '8px' }}>
+                            <IconButton sx={{ color: 'white', background: "#bebebe36" }}>
                               <FavoriteBorderIcon />
                             </IconButton>
-                            <IconButton sx={{color:'white', background: "#bebebe36"}}>
+                            <IconButton sx={{ color: 'white', background: "#bebebe36" }}>
                               <VisibilityOutlinedIcon />
                             </IconButton>
                           </div>
                         </div>
                       </div>
-                      <div className='thumbnail'>
+                      <div className='thumbnail' onClick={() => navigate(`/shop/${book.title.replace(/\s+/g, "-").toLowerCase()}/${book?.id}`)}>
                         <img src={book.thumbnail} alt="" />
                       </div>
                       <div className='book-inner-content'>
                         <div className='rating' >
                           <div className='rating-inner'>
-                              <Rating name="size-small" readOnly defaultValue={book.rating} precision={0.1} size="small" />
-                              <span style={{color: '#474747'}}>({book.rating})</span>
+                            <Rating name="size-small" readOnly defaultValue={book.rating} precision={0.1} size="small" />
+                            <span style={{ color: '#474747' }}>({book.rating})</span>
                           </div>
                         </div>
-                        <p className='title'>{book.title.length <= 40? book.title : book.title.slice(0,40) + '...'}</p>
+                        <p className='title' onClick={() => navigate(`/shop/${book.title.replace(/\s+/g, "-").toLowerCase()}/${book?.id}`)}>{book.title.length <= 40 ? book.title : book.title.slice(0, 40) + '...'}</p>
                         <div className='author'><a href='#'>{book.author}</a></div>
-                        <p className='price'><CurrencyRupeeIcon fontSize='inherit' sx={{mt:"4px"}} /> {book.price}  </p>
+                        <p className='price'><CurrencyRupeeIcon fontSize='inherit' sx={{ mt: "4px" }} /> {book.price}  </p>
                         <div className='btn-container'>
-                          <button style={{width:'100%', padding:'0.5rem 1rem'}} className='btn-theme-two'><AddIcon />Add to cart</button>
+                          <button disabled={loading} onClick={() => handleAddtoCart(book.id)} style={{ width: '100%', padding: '0.5rem 1rem' }} className='btn-theme-two'>
+                            {!loading && <AddIcon />}
+                            {loading && bookId === book.id && <CircularProgress size={20} color='inhert' sx={{ mr: 2 }} />}
+                            Add to cart
+                          </button>
                         </div>
                       </div>
                     </div>

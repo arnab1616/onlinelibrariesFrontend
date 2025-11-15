@@ -14,11 +14,11 @@ export const MyAddresses = () => {
             <div className='new-address-section'>
                 <div className='new-address-inner'>
                     {!formVisibility && (
-                    <div className='new-address-btn' onClick={() => setFormVisibility(!formVisibility)}>
-                        <AddIcon />
-                        <span>Add a New Address</span>
-                    </div>)}
-                    <div style={{marginBottom: formVisibility ? '2rem' : '0'}}>
+                        <div className='new-address-btn' onClick={() => setFormVisibility(!formVisibility)}>
+                            <AddIcon />
+                            <span>Add a New Address</span>
+                        </div>)}
+                    <div style={{ marginBottom: formVisibility ? '2rem' : '0' }}>
                         <AddressFormInfo formVisibility={formVisibility} setFormVisibility={setFormVisibility} />
                     </div>
                 </div>
@@ -28,9 +28,9 @@ export const MyAddresses = () => {
                     <div className='address-item'>
                         <div className='address-item-inner'>
                             <div className='address-action'>
-                                <div style={{display:'flex', alignItems:'center', gap:'0.5rem'}}>
-                                    <IconButton><EditIcon sx={{fontSize:'20px'}} /></IconButton>
-                                    <IconButton><DeleteIcon sx={{fontSize:'20px'}} /></IconButton>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                                    <IconButton><EditIcon sx={{ fontSize: '20px' }} /></IconButton>
+                                    <IconButton><DeleteIcon sx={{ fontSize: '20px' }} /></IconButton>
                                 </div>
                             </div>
                             <div className='address-type'>Home</div>
@@ -41,9 +41,9 @@ export const MyAddresses = () => {
                     <div className='address-item'>
                         <div className='address-item-inner'>
                             <div className='address-action'>
-                                <div style={{display:'flex', alignItems:'center', gap:'0.5rem'}}>
-                                    <IconButton><EditIcon sx={{fontSize:'20px'}} /></IconButton>
-                                    <IconButton><DeleteIcon sx={{fontSize:'20px'}} /></IconButton>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                                    <IconButton><EditIcon sx={{ fontSize: '20px' }} /></IconButton>
+                                    <IconButton><DeleteIcon sx={{ fontSize: '20px' }} /></IconButton>
                                 </div>
                             </div>
                             <div className='address-type'>Home</div>
@@ -54,9 +54,9 @@ export const MyAddresses = () => {
                     <div className='address-item'>
                         <div className='address-item-inner'>
                             <div className='address-action'>
-                                <div style={{display:'flex', alignItems:'center', gap:'0.5rem'}}>
-                                    <IconButton><EditIcon sx={{fontSize:'20px'}} /></IconButton>
-                                    <IconButton><DeleteIcon sx={{fontSize:'20px'}} /></IconButton>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                                    <IconButton><EditIcon sx={{ fontSize: '20px' }} /></IconButton>
+                                    <IconButton><DeleteIcon sx={{ fontSize: '20px' }} /></IconButton>
                                 </div>
                             </div>
                             <div className='address-type'>Home</div>
@@ -67,9 +67,9 @@ export const MyAddresses = () => {
                     <div className='address-item'>
                         <div className='address-item-inner'>
                             <div className='address-action'>
-                                <div style={{display:'flex', alignItems:'center', gap:'0.5rem'}}>
-                                    <IconButton><EditIcon sx={{fontSize:'20px'}} /></IconButton>
-                                    <IconButton><DeleteIcon sx={{fontSize:'20px'}} /></IconButton>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                                    <IconButton><EditIcon sx={{ fontSize: '20px' }} /></IconButton>
+                                    <IconButton><DeleteIcon sx={{ fontSize: '20px' }} /></IconButton>
                                 </div>
                             </div>
                             <div className='address-type'>Home</div>
@@ -80,9 +80,9 @@ export const MyAddresses = () => {
                     <div className='address-item'>
                         <div className='address-item-inner'>
                             <div className='address-action'>
-                                <div style={{display:'flex', alignItems:'center', gap:'0.5rem'}}>
-                                    <IconButton><EditIcon sx={{fontSize:'20px'}} /></IconButton>
-                                    <IconButton><DeleteIcon sx={{fontSize:'20px'}} /></IconButton>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                                    <IconButton><EditIcon sx={{ fontSize: '20px' }} /></IconButton>
+                                    <IconButton><DeleteIcon sx={{ fontSize: '20px' }} /></IconButton>
                                 </div>
                             </div>
                             <div className='address-type'>Home</div>
