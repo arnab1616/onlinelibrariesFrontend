@@ -34,6 +34,7 @@ import { activePath, activePathReload, setTabIndex } from '../../redux/slices/he
 
 
 export default function Header() {
+  const { loading = false, cartCount = 0, } = useSelector((state) => state.cart);
   const { currentPath, tabIndex } = useSelector((state) => state.header);
   const [anchorEl, setAnchorEl] = useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
@@ -46,19 +47,19 @@ export default function Header() {
   const NavlinkActivation = (id, path) => {
     const current = window.location.pathname;
     navigation(path);
-    dispatch(activePath({id, path}));
+    dispatch(activePath({ id, path }));
     if (current === path) {
-      dispatch(activePath({id, path}))
+      dispatch(activePath({ id, path }))
       navigation(path);
       return;
     }
   }
   useEffect(() => {
     const current = window.location.pathname;
-    dispatch(activePathReload({path: current}));
+    dispatch(activePathReload({ path: current }));
   }, [window.location.pathname])
   const open = Boolean(anchorEl1);
-  
+
   const handleClick = (event) => {
     setAnchorEl1(event.currentTarget);
   };
@@ -108,9 +109,9 @@ export default function Header() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={() => {handleMenuClose(); navigation('/profile')}} >Profile</MenuItem>
-      <MenuItem onClick={() => {handleMenuClose(); navigation('/profile')}}>My account</MenuItem>
-      <MenuItem onClick={() => {handleMenuClose(); navigation('/login')}}>Login</MenuItem>
+      <MenuItem onClick={() => { handleMenuClose(); navigation('/profile') }} >Profile</MenuItem>
+      <MenuItem onClick={() => { handleMenuClose(); navigation('/profile') }}>My account</MenuItem>
+      <MenuItem onClick={() => { handleMenuClose(); navigation('/login') }}>Login</MenuItem>
     </Menu>
   );
 
@@ -122,8 +123,8 @@ export default function Header() {
       onKeyDown={toggleDrawer(false)}
       className='mobile-nav'
     >
-      <Box sx={{p:2, pb: 0}}>
-        <Box sx={{display:'flex', alignItems:'center'}}>
+      <Box sx={{ p: 2, pb: 0 }}>
+        <Box sx={{ display: 'flex', alignItems: 'center' }}>
           {/* <IconButton
             size="large"
             edge="start"
@@ -141,13 +142,13 @@ export default function Header() {
             StudyCraft
           </Typography> */}
           <div className='logo-header'>
-              <img src="/images/logo-2.png" alt="logo" width="100%" />
+            <img src="/images/logo-2.png" alt="logo" width="100%" />
           </div>
         </Box>
       </Box>
       <List>
-        <ListItem disablePadding className={currentPath?.id == 1?'current':''} onClick={() => {
-          NavlinkActivation(1,'/')
+        <ListItem disablePadding className={currentPath?.id == 1 ? 'current' : ''} onClick={() => {
+          NavlinkActivation(1, '/')
         }}>
           <ListItemButton>
             <ListItemIcon>
@@ -156,8 +157,8 @@ export default function Header() {
             <ListItemText primary={'Home'} />
           </ListItemButton>
         </ListItem>
-        <ListItem disablePadding className={currentPath?.id == 2?'current':''} onClick={() => {
-          NavlinkActivation(2,'/shop')
+        <ListItem disablePadding className={currentPath?.id == 2 ? 'current' : ''} onClick={() => {
+          NavlinkActivation(2, '/shop')
         }}>
           <ListItemButton>
             <ListItemIcon>
@@ -166,8 +167,8 @@ export default function Header() {
             <ListItemText primary={'Shop'} />
           </ListItemButton>
         </ListItem>
-        <ListItem disablePadding className={currentPath?.id == 3?'current':''} onClick={() => {
-          NavlinkActivation(3,'/about')
+        <ListItem disablePadding className={currentPath?.id == 3 ? 'current' : ''} onClick={() => {
+          NavlinkActivation(3, '/about')
         }}>
           <ListItemButton>
             <ListItemIcon>
@@ -176,8 +177,8 @@ export default function Header() {
             <ListItemText primary={'About'} path='/about' />
           </ListItemButton>
         </ListItem>
-        <ListItem disablePadding className={currentPath?.id == 4?'current':''} onClick={() => {
-          NavlinkActivation(4,'/contact')
+        <ListItem disablePadding className={currentPath?.id == 4 ? 'current' : ''} onClick={() => {
+          NavlinkActivation(4, '/contact')
         }}>
           <ListItemButton>
             <ListItemIcon>
@@ -188,8 +189,8 @@ export default function Header() {
         </ListItem>
       </List>
       <Divider />
-      <Box sx={{p:3, mt: 2}}>
-        <Typography sx={{fontSize:'14px'}}>Need help? Call Us: <b>+91 89106 92264</b></Typography>
+      <Box sx={{ p: 3, mt: 2 }}>
+        <Typography sx={{ fontSize: '14px' }}>Need help? Call Us: <b>+91 89106 92264</b></Typography>
       </Box>
     </Box>
   );
@@ -197,38 +198,38 @@ export default function Header() {
     <Box
       sx={{ width: 300 }}
       role="presentation"
-      // onClick={toggleDrawer2(false)}
-      // onKeyDown={toggleDrawer2(false)}
+    // onClick={toggleDrawer2(false)}
+    // onKeyDown={toggleDrawer2(false)}
     >
-      <Box sx={{p:2, pb: 0}}>
-        <Box sx={{display:'flex', alignItems:'center'}}>
+      <Box sx={{ p: 2, pb: 0 }}>
+        <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <Box>
             <form className="predictive-search__form" action="/search" method="get" role="search">
-                <button className="btn-search-header-two">
-                    <div className="icon-header">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                          <path d="M21 21L15.0001 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
-                      </svg>
-                    </div>
-                </button>
-                <input className="predictive-search__input" is="ap-predictivesearchinput" type="text" name="q" autocomplete="off" autocorrect="off" ap-controlsaria="search-drawer" ap-expanded-aria="false" aria-label="Search" placeholder="Search our store..." style={{outline:0,}} />
+              <button className="btn-search-header-two">
+                <div className="icon-header">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M21 21L15.0001 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
+                  </svg>
+                </div>
+              </button>
+              <input className="predictive-search__input" is="ap-predictivesearchinput" type="text" name="q" autocomplete="off" autocorrect="off" ap-controlsaria="search-drawer" ap-expanded-aria="false" aria-label="Search" placeholder="Search our store..." style={{ outline: 0, }} />
             </form>
           </Box>
         </Box>
       </Box>
       <Divider />
-      <Box sx={{p:3, mt: 2}}>
-        <Typography sx={{fontSize:'14px'}}>Need help? Call Us: <b>+91 89106 92264</b></Typography>
+      <Box sx={{ p: 3, mt: 2 }}>
+        <Typography sx={{ fontSize: '14px' }}>Need help? Call Us: <b>+91 89106 92264</b></Typography>
       </Box>
     </Box>
   );
 
 
   return (
-    <Box sx={{ flexGrow: 1, position:'fixed', width:'100%', zIndex:'999' }}>
-      <AppBar position="static" sx={{backgroundColor:'white', color:'#000000a3'}}>
+    <Box sx={{ flexGrow: 1, position: 'fixed', width: '100%', zIndex: '999' }}>
+      <AppBar position="static" sx={{ backgroundColor: 'white', color: '#000000a3' }}>
         <Toolbar>
-          <Box sx={{display:'flex', alignItems:'center'}}>
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
             {/* <IconButton
               size="large"
               edge="start"
@@ -260,37 +261,37 @@ export default function Header() {
           </Search> */}
           <Box className="header-icon search-icon-text header-search">
             <div className="header__search-bar predictive-search">
-                <form className="predictive-search__form" action="/search" method="get" role="search">
-                    {/* <input type="hidden" name="type" value="product">
+              <form className="predictive-search__form" action="/search" method="get" role="search">
+                {/* <input type="hidden" name="type" value="product">
                     <input type="hidden" name="options[prefix]" value="last">
                     <input type="hidden" name="options[unavailable_products]" value="last"> */}
-                    <input className="predictive-search__input" is="ap-predictivesearchinput" type="text" name="q" autocomplete="off" autocorrect="off" ap-controlsaria="search-drawer" ap-expanded-aria="false" aria-label="Search" placeholder="Search our store..." style={{outline:0,}} />
-                    <button className="btn-search-header">
-                        <div className="icon-header">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                              <path d="M21 21L15.0001 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
-                          </svg>
-                        </div>
-                        <span>Search</span>
-                    </button>
-                </form>
+                <input className="predictive-search__input" is="ap-predictivesearchinput" type="text" name="q" autocomplete="off" autocorrect="off" ap-controlsaria="search-drawer" ap-expanded-aria="false" aria-label="Search" placeholder="Search our store..." style={{ outline: 0, }} />
+                <button className="btn-search-header">
+                  <div className="icon-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <path d="M21 21L15.0001 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
+                    </svg>
+                  </div>
+                  <span>Search</span>
+                </button>
+              </form>
             </div>
           </Box>
           <Box sx={{ flexGrow: 1 }} />
           <Box className='header-icon-box' sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <IconButton className={tabIndex == 3 && window.location.pathname == '/profile' ? 'current':''} size="large" aria-label="show 4 new mails" color="inherit" onClick={() => {dispatch(setTabIndex(3)); navigation('/profile')}}>
+            <IconButton className={tabIndex == 3 && window.location.pathname == '/profile' ? 'current' : ''} size="large" aria-label="show 4 new mails" color="inherit" onClick={() => { dispatch(setTabIndex(3)); navigation('/profile') }}>
               <Badge badgeContent={1} color="error">
                 <FavoriteBorderRoundedIcon />
               </Badge>
             </IconButton>
             <IconButton
-              className={currentPath?.id == 6 ? 'current':''}
+              className={currentPath?.id == 6 ? 'current' : ''}
               size="large"
               aria-label="show 17 new notifications"
               color="inherit"
               onClick={() => navigation('/cart')}
             >
-              <Badge badgeContent={1} color="error">
+              <Badge badgeContent={cartCount || 0} color="error">
                 <AddShoppingCartRoundedIcon />
               </Badge>
             </IconButton>
@@ -323,55 +324,55 @@ export default function Header() {
               onClick={toggleDrawer(true)}
               color="inherit"
             >
-              {open1?<MenuOpenIcon/> :<MenuIcon />}
+              {open1 ? <MenuOpenIcon /> : <MenuIcon />}
             </IconButton>
           </Box>
         </Toolbar>
         <Divider />
-        <Toolbar sx={{display:'flex', alignItems:'center', justifyContent:'space-between'}}>
-          <Box sx={{display:'flex', alignItems:'center', width:{xs: '100%', md:'fit-content'}, justifyContent:{xs:'space-between', md:'normal'}}}>
+        <Toolbar sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', width: { xs: '100%', md: 'fit-content' }, justifyContent: { xs: 'space-between', md: 'normal' } }}>
             <div className="menu-categories">
               <button className="header__icon-wrapper tap-area" id="basic-button" aria-controls={open ? 'basic-menu' : undefined} aria-haspopup="true" aria-expanded={open ? 'true' : undefined} onClick={handleClick}>
                 <div className="categories-title">
                   <p className="nav-categories-title">all category</p>
                   <div className="icon-title_categories-left">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="11" viewBox="0 0 13 11" fill="none">
-                        <path d="M0.375 1.15625C0.411458 0.755208 0.630208 0.536458 1.03125 0.5H11.9688C12.3698 0.536458 12.5885 0.755208 12.625 1.15625C12.5885 1.55729 12.3698 1.77604 11.9688 1.8125H1.03125C0.630208 1.77604 0.411458 1.55729 0.375 1.15625ZM0.375 5.53125C0.411458 5.13021 0.630208 4.91146 1.03125 4.875H11.9688C12.3698 4.91146 12.5885 5.13021 12.625 5.53125C12.5885 5.93229 12.3698 6.15104 11.9688 6.1875H1.03125C0.630208 6.15104 0.411458 5.93229 0.375 5.53125ZM12.625 9.90625C12.5885 10.3073 12.3698 10.526 11.9688 10.5625H1.03125C0.630208 10.526 0.411458 10.3073 0.375 9.90625C0.411458 9.50521 0.630208 9.28646 1.03125 9.25H11.9688C12.3698 9.28646 12.5885 9.50521 12.625 9.90625Z" fill="currentColor"></path>
-                      </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="11" viewBox="0 0 13 11" fill="none">
+                      <path d="M0.375 1.15625C0.411458 0.755208 0.630208 0.536458 1.03125 0.5H11.9688C12.3698 0.536458 12.5885 0.755208 12.625 1.15625C12.5885 1.55729 12.3698 1.77604 11.9688 1.8125H1.03125C0.630208 1.77604 0.411458 1.55729 0.375 1.15625ZM0.375 5.53125C0.411458 5.13021 0.630208 4.91146 1.03125 4.875H11.9688C12.3698 4.91146 12.5885 5.13021 12.625 5.53125C12.5885 5.93229 12.3698 6.15104 11.9688 6.1875H1.03125C0.630208 6.15104 0.411458 5.93229 0.375 5.53125ZM12.625 9.90625C12.5885 10.3073 12.3698 10.526 11.9688 10.5625H1.03125C0.630208 10.526 0.411458 10.3073 0.375 9.90625C0.411458 9.50521 0.630208 9.28646 1.03125 9.25H11.9688C12.3698 9.28646 12.5885 9.50521 12.625 9.90625Z" fill="currentColor"></path>
+                    </svg>
                   </div>
                 </div>
               </button>
             </div>
-            <Box className='lower-nav' sx={{display: {xs: 'none', md:'flex'}}}>
-              <List sx={{display:'flex', alignItems:'center', gap:'5px'}}>
-                  <ListItem className={currentPath?.id == 1?'current':''} onClick={() => {
-                    NavlinkActivation(1,'/')
-                  }}>Home</ListItem>
-                  <ListItem className={currentPath?.id == 2 ? 'current':''} onClick={() => {
-                    NavlinkActivation(2,'/shop')
-                  }}>Shop</ListItem>
-                  <ListItem className={currentPath?.id == 3 ? 'current':''} onClick={() => {
-                    NavlinkActivation(3,'/about')
-                  }}>About</ListItem>
-                  <ListItem className={currentPath?.id == 4 ? 'current':''} onClick={() => {
-                    NavlinkActivation(4,'/contact')
-                  }}>Contact</ListItem>
+            <Box className='lower-nav' sx={{ display: { xs: 'none', md: 'flex' } }}>
+              <List sx={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+                <ListItem className={currentPath?.id == 1 ? 'current' : ''} onClick={() => {
+                  NavlinkActivation(1, '/')
+                }}>Home</ListItem>
+                <ListItem className={currentPath?.id == 2 ? 'current' : ''} onClick={() => {
+                  NavlinkActivation(2, '/shop')
+                }}>Shop</ListItem>
+                <ListItem className={currentPath?.id == 3 ? 'current' : ''} onClick={() => {
+                  NavlinkActivation(3, '/about')
+                }}>About</ListItem>
+                <ListItem className={currentPath?.id == 4 ? 'current' : ''} onClick={() => {
+                  NavlinkActivation(4, '/contact')
+                }}>Contact</ListItem>
               </List>
             </Box>
             <Box className='header-icon-box' sx={{ display: { xs: 'flex', md: 'none' } }}>
-              <IconButton className={tabIndex == 3 && window.location.pathname == '/profile' ? 'current':''} size="large" aria-label="show 4 new mails" color="inherit" onClick={() => {dispatch(setTabIndex(3)); navigation('/profile')}}>
+              <IconButton className={tabIndex == 3 && window.location.pathname == '/profile' ? 'current' : ''} size="large" aria-label="show 4 new mails" color="inherit" onClick={() => { dispatch(setTabIndex(3)); navigation('/profile') }}>
                 <Badge badgeContent={1} color="error">
                   <FavoriteBorderRoundedIcon />
                 </Badge>
               </IconButton>
               <IconButton
-                className={currentPath?.id == 6 ? 'current':''}
+                className={currentPath?.id == 6 ? 'current' : ''}
                 size="large"
                 aria-label="show 17 new notifications"
                 color="inherit"
                 onClick={() => navigation('/cart')}
               >
-                <Badge badgeContent={1} color="error">
+                <Badge badgeContent={cartCount || 0} color="error">
                   <AddShoppingCartRoundedIcon />
                 </Badge>
               </IconButton>
@@ -388,8 +389,8 @@ export default function Header() {
               </IconButton>
             </Box>
           </Box>
-          <Box sx={{display: {xs: 'none', md:'block'}}}>
-            <Typography sx={{fontSize:'14px'}}>Need help? Call Us: <b>+91 89106 92264</b></Typography>
+          <Box sx={{ display: { xs: 'none', md: 'block' } }}>
+            <Typography sx={{ fontSize: '14px' }}>Need help? Call Us: <b>+91 89106 92264</b></Typography>
           </Box>
         </Toolbar>
       </AppBar>
@@ -403,17 +404,17 @@ export default function Header() {
         // MenuListProps={{
         //   'aria-labelledby': 'basic-button',
         // }}
-        sx={{mt:1, width:'210px', color:'gray'}}
+        sx={{ mt: 1, width: '210px', color: 'gray' }}
       >
         <MenuItem onClick={handleClose}>
-          <Box sx={{fontSize:'1rem', display:'flex', alignItems:'center', color:'#707070'}}>
-            <MenuBookRoundedIcon sx={{fontSize: '22px', mr: 2}} />
+          <Box sx={{ fontSize: '1rem', display: 'flex', alignItems: 'center', color: '#707070' }}>
+            <MenuBookRoundedIcon sx={{ fontSize: '22px', mr: 2 }} />
             <Typography>Books</Typography>
           </Box>
         </MenuItem>
         <MenuItem onClick={handleClose}>
-          <Box sx={{fontSize:'1rem', display:'flex', alignItems:'center', color:'#707070'}}>
-            <DevicesOtherIcon sx={{fontSize: '22px', mr: 2}} />
+          <Box sx={{ fontSize: '1rem', display: 'flex', alignItems: 'center', color: '#707070' }}>
+            <DevicesOtherIcon sx={{ fontSize: '22px', mr: 2 }} />
             <Typography>Stationary</Typography>
           </Box>
         </MenuItem>
